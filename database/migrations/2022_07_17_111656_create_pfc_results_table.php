@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBmisTable extends Migration
+class CreatePfcResultsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateBmisTable extends Migration
      */
     public function up()
     {
-        Schema::create('bmis', function (Blueprint $table) {
+        Schema::create('pfc_results', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned();
-            $table->tinyInteger('result');
-            $table->tinyInteger('score');
-            $table->integer('height');
             $table->integer('weight');
+            $table->integer('body_fat');
+            $table->integer('lb_mass');
             $table->timestamps();
             $table->softDeletes();
 
@@ -34,6 +33,6 @@ class CreateBmisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bmis');
+        Schema::dropIfExists('pfc_results');
     }
 }
