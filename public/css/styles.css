@@ -25,7 +25,8 @@ body {
 
 .my-navbar-brand,
 .my-navbar-item {
-  color: #8c8c8c;
+  /* color: #8c8c8c; */
+  color: #ffffff;
 }
 
 .my-navbar-brand:hover,

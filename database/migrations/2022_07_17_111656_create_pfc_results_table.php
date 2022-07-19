@@ -18,7 +18,7 @@ class CreatePfcResultsTable extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->integer('weight');
             $table->integer('body_fat');
-            $table->integer('lb_mass');
+            // $table->integer('lb_mass');
             $table->timestamps();
             $table->softDeletes();
 

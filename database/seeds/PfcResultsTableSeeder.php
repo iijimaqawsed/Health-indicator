@@ -18,7 +18,7 @@ class PfcResultsTableSeeder extends Seeder
             'user_id' => $user->id,
             'weight' =>'58',
             'body_fat' => '10',
-            'lb_mass' => '52.2',
+            // 'lb_mass' => '52.2',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);

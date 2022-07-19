@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Bmi extends Model
+class BmiResult extends Model
 {
     //
 }
