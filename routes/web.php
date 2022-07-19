@@ -17,11 +17,11 @@
 
 // Route::get('/','Controller@');
 Route::get('/','HomeController@index');
-Route::get('/bmis/{bmi}/pfcs/{pfc}/index','ResultController@index')->name('results.index');
-Route::get('/bmis/{bmi}/measure','Controller@');
-Route::post('/bmis/{bmi}/measure','Controller@');
-Route::get('/pfcs/{pfc}/measure','Controller@');
-Route::post('/pfcs/{pfc}/measure','Controller@');
+Route::get('/index','ResultController@index')->name('results.index');
+Route::get('/bmi_results/{bmi}/measure','Controller@');
+Route::post('/bmi_results/{bmi}/measure','Controller@');
+Route::get('/pfc_results/{pfc}/measure','Controller@');
+Route::post('/pfc_results/{pfc}/measure','Controller@');
 Route::get('/users/{user}','Controller@');
 Route::get('/users/{user}/edit','Controller@');
 Route::post('/users/{user}/edit','Controller@');

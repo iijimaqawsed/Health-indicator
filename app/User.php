@@ -38,10 +38,10 @@ class User extends Authenticatable
     ];
 
     public function bmis() {
-        return $this->hasMany('App\Bmi');
+        return $this->hasMany('App\BmiResult');
     }
 
     public function pfcs() {
-        return $this->hasMany('App\Pfc');
+        return $this->hasMany('App\PfcResult');
     }
 }
