@@ -18,10 +18,12 @@
 // Route::get('/','Controller@');
 Route::get('/','HomeController@index');
 Route::get('/index','ResultController@index')->name('results.index');
-Route::get('/bmi_results/{bmi}/measure','Controller@');
-Route::post('/bmi_results/{bmi}/measure','Controller@');
-Route::get('/pfc_results/{pfc}/measure','Controller@');
-Route::post('/pfc_results/{pfc}/measure','Controller@');
+Route::get('/bmi/measure','BmiController@showMeasureForm')->name('bmi.measure');
+Route::post('/bmi/measure','BmiController@measure');
+Route::get('/pfc/measure','Controller@showMeasureForm')->name('pfc.measure');
+Route::post('/pfc/measure','Controller@measure');
+
+
 Route::get('/users/{user}','Controller@');
 Route::get('/users/{user}/edit','Controller@');
 Route::post('/users/{user}/edit','Controller@');

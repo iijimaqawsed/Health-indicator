@@ -25,6 +25,14 @@
                 <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" />
               </div>
               <div class="form-group">
+                <label for="gender" id="gender">性別</label><br>
+                <select name="gender">
+                  <option value="">性別を選択してください</option>
+                  <option value="0">男性</option>
+                  <option value="1">女性</option>
+                </select>
+              </div>
+              <div class="form-group">
                 <label for="password">パスワード</label>
                 <input type="password" class="form-control" id="password" name="password">
               </div>
