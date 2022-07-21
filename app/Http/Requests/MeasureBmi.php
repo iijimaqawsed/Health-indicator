@@ -24,11 +24,11 @@ class MeasureBmi extends FormRequest
     public function rules()
     {
         return [
-            'height' => 'required|integer',
+            'height' => 'required|regex:/^\d{1,3}\.?\d*$/',
             'weight' => 'required|integer',
         ];
     }
-
+    // /^[1-9][0-9]*\.?/\d*$/
     // regex:^[1-9][0-9]+$|^[1-9][0-9]+\.?[0-9]+$
 
     public function attributes()

@@ -16,9 +16,9 @@ class CreateBmiResultsTable extends Migration
         Schema::create('bmi_results', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned();
-            $table->integer('height');
-            $table->integer('weight');
-            $table->integer('result');
+            $table->decimal('height');
+            $table->decimal('weight');
+            $table->decimal('result');
             $table->tinyInteger('score');
             $table->timestamps();
             $table->softDeletes();
