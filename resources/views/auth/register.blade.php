@@ -32,6 +32,8 @@
                   <option value="1">女性</option>
                 </select>
               </div>
+              <!-- <input type="text" name="gender" class="form-group"> -->
+              <!-- バリデーションチェック用 -->
               <div class="form-group">
                 <label for="password">パスワード</label>
                 <input type="password" class="form-control" id="password" name="password">

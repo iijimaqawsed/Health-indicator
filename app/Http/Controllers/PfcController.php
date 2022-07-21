@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\PfcResult;
+use App\Http\Requests\MeasurePfc;
 
 class PfcController extends Controller
 {
@@ -12,7 +13,7 @@ class PfcController extends Controller
         return view('pfc/measure');
     }
 
-    public function measure($request) {
+    public function measure(MeasurePfc $request) {
         $pfc = new PfcResult();
 
         $pfc->weight = $request->weight;

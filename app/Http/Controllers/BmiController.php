@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\BmiResult;
+use App\Http\Requests\MeasureBmi;
 
 class BmiController extends Controller
 {
@@ -13,7 +14,7 @@ class BmiController extends Controller
     }
 
 
-    public function measure($request) {
+    public function measure(MeasureBmi $request) {
         $bmi = new BmiResult();
         $bmi->height = $request->height;
         $bmi->weight = $request->weight;

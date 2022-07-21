@@ -55,6 +55,13 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'gender' => ['required', Rule::in('0','1')],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ],[
+            'gender.in' => ':attribute 記入欄はプルダウンメニューから入力してください。',
+        ],[
+            'name' => '名前',
+            'email' => 'メールアドレス',
+            'password' => 'パスワード',
+            'gender' => '性別',
         ]);
     }
 

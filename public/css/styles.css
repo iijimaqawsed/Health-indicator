@@ -46,3 +46,22 @@ a.my-navbar-item:hover {
   background-color: #fff;
 }
 
+/* BMI入力画面 */
+.bmi_mesure_form .col-md-10{
+  padding-right: 0px;
+}
+.bmi_mesure_form .unit{
+  font-size: 20px;
+}
+
+
+/* PFC入力画面 */
+.pfc_mesure_form .col-md-10{
+  padding-right: 0px;
+}
+.pfc_mesure_form .unit{
+  font-size: 20px;
+}
+.pfc_mesure_form .confirm{
+  text-align: left;
+}
