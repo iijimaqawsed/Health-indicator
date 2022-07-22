@@ -43,7 +43,6 @@ class PfcController extends Controller
             // ＊＊＊＊＊＊画面遷移先ファイルの作成＊＊＊＊＊
             'bmi' => $bmi->result,
             'score' => $bmi->score,
-            // ＊＊＊＊＊アクセサの作成＊＊＊＊＊
             'weight' => $s_weight,
             'dif_weight' => $difference_weight,
         ]);

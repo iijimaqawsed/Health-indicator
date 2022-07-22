@@ -16,8 +16,8 @@ class CreatePfcResultsTable extends Migration
         Schema::create('pfc_results', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned();
-            $table->integer('weight');
-            $table->integer('body_fat');
+            $table->decimal('weight');
+            $table->decimal('body_fat');
             // $table->integer('lb_mass');
             $table->timestamps();
             $table->softDeletes();

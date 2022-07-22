@@ -24,12 +24,11 @@ class MeasureBmi extends FormRequest
     public function rules()
     {
         return [
-            'height' => 'required|regex:/^\d{1,3}\.?\d*$/',
-            'weight' => 'required|integer',
+            'height' => 'required|regex:/^[1-9]\d{1,2}(\.\d{1,2})?$/',
+            'weight' => 'required|regex:/^[1-9]\d{1,2}(\.\d{1,2})?$/',
         ];
     }
-    // /^[1-9][0-9]*\.?/\d*$/
-    // regex:^[1-9][0-9]+$|^[1-9][0-9]+\.?[0-9]+$
+    // \d+(\.\d+)?　参考にした正規表現
 
     public function attributes()
     {
@@ -42,7 +41,8 @@ class MeasureBmi extends FormRequest
     public function messages()
     {
         return [
-            'height.max' => ':attribute の数値が大きすぎます。単位は「ｃｍ」です。',
+            'height.regex' => ':attribute は整数３桁以内で小数点第二位までの半角数値で入力をお願いします。',
+            'weight.regex' => ':attribute は整数３桁以内で小数点第二位までの半角数値で入力をお願いします。',
         ];
     }
 }

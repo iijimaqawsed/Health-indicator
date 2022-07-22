@@ -23,9 +23,8 @@ class BmiController extends Controller
         $height = $request->height;
         $weight = $request->weight;
 
-        $format_weight = floor($weight);
-        $height = pow(floor($height)/100,2);
-        $bmi->result = round($format_weight / $height,2);
+        $format_height = pow($height/100,2);
+        $bmi->result = round($weight / $format_height,2);
         // BMIの計算
 
 
@@ -39,10 +38,10 @@ class BmiController extends Controller
             $bmi->score = 3;
         }
 
-        $s_weight = round($height*22, 2);
+        $s_weight = round($format_height*22, 2);
         // 身長に対しての標準体重
 
-        $difference_weight = $format_weight - $s_weight;
+        $difference_weight = $weight - $s_weight;
         // 標準体重との実測体重との差
 
         Auth::user()->bmis()->save($bmi);
@@ -51,7 +50,6 @@ class BmiController extends Controller
             // ＊＊＊＊＊＊画面遷移先ファイルの作成＊＊＊＊＊
             'bmi' => $bmi->result,
             'score' => $bmi->score,
-            // ＊＊＊＊＊アクセサの作成＊＊＊＊＊
             'weight' => $s_weight,
             'dif_weight' => $difference_weight,
         ]);
