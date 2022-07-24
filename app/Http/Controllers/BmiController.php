@@ -48,8 +48,7 @@ class BmiController extends Controller
 
         return redirect()->route('results.index', [
             // ＊＊＊＊＊＊画面遷移先ファイルの作成＊＊＊＊＊
-            'bmi' => $bmi->result,
-            'score' => $bmi->score,
+            'bmi' => $bmi,
             'weight' => $s_weight,
             'dif_weight' => $difference_weight,
         ]);

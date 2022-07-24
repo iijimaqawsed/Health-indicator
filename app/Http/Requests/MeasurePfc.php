@@ -25,7 +25,7 @@ class MeasurePfc extends FormRequest
     {
         return [
             'weight' => 'required|regex:/^[1-9]\d{1,2}(\.\d{1,2})?$/',
-            'body_fat' => 'required|regex:/^[1-9]\d{1,2}(\.\d{1,2})?$/',
+            'body_fat' => 'required|regex:/^[1-9]\d{1}(\.\d{1,2})?$/',
         ];
     }
 
@@ -41,7 +41,7 @@ class MeasurePfc extends FormRequest
     {
         return [
             'weight.regex' => ':attribute は整数３桁以内で小数点第二位までの半角数値で入力をお願いします。',
-            'body_fat.regex' => ':attribute は整数３桁以内で小数点第二位までの半角数値で入力をお願いします。',
+            'body_fat.regex' => ':attribute は整数２桁以内で小数点第二位までの半角数値で入力をお願いします。',
         ];
     }
 }
