@@ -65,3 +65,20 @@ a.my-navbar-item:hover {
 .pfc_mesure_form .confirm{
   text-align: left;
 }
+
+/* BMI結果画面 */
+.bmi-results .bmi-result{
+  display: flex;
+}
+.bmi-results .score-explanation {
+  display: flex;
+}
+.bmi-results .result-img {
+  width: 70px;
+}
+.bmi-results .result-img img {
+  width: auto;
+  height: 75px;
+  flex-wrap: wrap;
+}
+/* .bmi-results{} */

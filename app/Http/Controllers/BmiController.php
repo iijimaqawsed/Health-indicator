@@ -46,13 +46,32 @@ class BmiController extends Controller
 
         Auth::user()->bmis()->save($bmi);
 
-        return redirect()->route('results.index', [
+        return view('bmi/result', [
             // ＊＊＊＊＊＊画面遷移先ファイルの作成＊＊＊＊＊
             'bmi' => $bmi,
             'weight' => $s_weight,
             'dif_weight' => $difference_weight,
         ]);
+    }
 
+    public function result(BmiResult $bmi) {
+        $height = $bmi->height;
+        $weight = $bmi->weight;
+
+        $format_height = pow($height/100,2);
+
+
+
+        $s_weight = round($format_height*22, 2);
+        // 身長に対しての標準体重
+
+        $difference_weight = $weight - $s_weight;
+        // 標準体重との実測体重との差
+        return view('bmi/result',[
+            'bmi' => $bmi,
+            'weight' => $s_weight,
+            'dif_weight' => $difference_weight,
+        ]);
     }
 
 }

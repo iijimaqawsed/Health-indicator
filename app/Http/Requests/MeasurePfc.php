@@ -25,7 +25,7 @@ class MeasurePfc extends FormRequest
     {
         return [
             'weight' => 'required|regex:/^[1-9]\d{1,2}(\.\d{1,2})?$/',
-            'body_fat' => 'required|regex:/^[1-9]\d{1}(\.\d{1,2})?$/',
+            'body_fat' => 'required|regex:/^[1-9](\d{1})?(\.\d{1,2})?$/',
         ];
     }
 

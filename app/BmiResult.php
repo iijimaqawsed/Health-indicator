@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class BmiResult extends Model
 {
     const SCORE = [
-        0 => [ 'label' => '痩せ', 'class' => 'label-primary' ],
-        1 => [ 'label' => '標準', 'class' => 'label-success' ],
+        0 => [ 'label' => '　痩せ　', 'class' => 'label-primary' ],
+        1 => [ 'label' => '　標準　', 'class' => 'label-success' ],
         2 => [ 'label' => '太り気味', 'class' => 'label-warning' ],
-        3 => [ 'label' => '肥満', 'class' => 'label-danger' ],
+        3 => [ 'label' => '　肥満　', 'class' => 'label-danger' ],
     ];
 
     public function getScoreLabelAttribute()

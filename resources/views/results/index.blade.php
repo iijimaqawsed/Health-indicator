@@ -12,6 +12,7 @@
             <thead>
             <tr>
               <th>過去の測定日</th>
+              <th>BMI数値</th>
               <th>評価</th>
               <th></th>
             </tr>
@@ -19,7 +20,8 @@
             <tbody>
             @foreach($bmis as $bmi)
             <tr>
-                <td><a href="" class="bmi-result-item">{{ $bmi->formatted_created_date }}</a></td>
+                <td><a href="{{ route('bmi.result', ['bmi' => $bmi->id]) }}" class="bmi-result-item">{{ $bmi->formatted_created_date }}</a></td>
+                <td>{{ $bmi->result }}</td>
                 <td>
                   <span class="label {{ $bmi->score_class }}">{{ $bmi->score_label }}</span>
                 </td>
@@ -45,7 +47,7 @@
             <tbody>
             @foreach($pfcs as $pfc)
             <tr>
-                <td><a href="" class="pfc-result-item">{{ $pfc->created_at }}</a></td>
+                <td><a href="{{ route('pfc.result', ['pfc' => $pfc->id]) }}" class="pfc-result-item">{{ $pfc->created_at }}</a></td>
                 <td><a href="">削除</a></td>
               </tr>
             @endforeach
