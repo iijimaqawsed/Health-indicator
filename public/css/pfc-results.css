@@ -1,0 +1,25 @@
+/* ＊＊＊＊＊　PFC結果画面　＊＊＊＊＊ */
+.pfc-results{
+  box-sizing: border-box;
+}
+.flex-items{
+  display: flex;
+  max-width: 1440px;
+  margin: 0 auto;
+  justify-content: space-evenly;
+}
+.result-contents{
+  text-align: center;
+}
+.pfc-results h2 {
+  font-size: 30px;
+  margin-top: 70px;
+  font-weight: 500;
+}
+.pfc-results h3 {
+  font-size: 40px;
+  margin-top: 20px;
+}
+/* .body-result{
+
+} */

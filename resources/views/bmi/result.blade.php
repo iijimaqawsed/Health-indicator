@@ -11,8 +11,8 @@
   <p>hello world</p>
   @endif
     <div class="result-contents">
-      <h2 class="main-title">{{ Auth::user()->name }}さんのBMI結果数値</h2>
       <div class="bmi-result">
+        <h2 class="main-title">{{ Auth::user()->name }}さんのBMI結果数値</h2>
         <h3>{{ $bmi->result }}</h3>
         <div class="result-explanation">
           <p>BMIの計算式：体重(kg) ÷ ( 身長(cm) / 100)<sup>2</sup></p>
