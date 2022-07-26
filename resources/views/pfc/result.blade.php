@@ -1,5 +1,9 @@
 @extends('layout')
 
+@section('styles')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+@endsection
+
 @section('content')
   <div class="container">
     <div class="result-contents">
