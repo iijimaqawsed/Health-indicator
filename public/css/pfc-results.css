@@ -1,10 +1,13 @@
 /* ＊＊＊＊＊　PFC結果画面　＊＊＊＊＊ */
+header .my-navbar {
+  margin-bottom: 0px;
+}
 .pfc-results{
   box-sizing: border-box;
+  max-width: 1440px;
 }
 .flex-items{
   display: flex;
-  max-width: 1440px;
   margin: 0 auto;
   justify-content: space-evenly;
 }
@@ -12,14 +15,91 @@
   text-align: center;
 }
 .pfc-results h2 {
-  font-size: 30px;
-  margin-top: 70px;
+  font-size: 24px;
+  margin: 30px 0 0 0;
   font-weight: 500;
 }
+.pfc-results h2:not(.pfc-results .main-title, .sec-title h2){
+  background-color: rgb(188, 238, 238);
+}
+/* .pfc-results .main-title, .sec-title h2{
+  background-color: #f4f7f8;
+} */
 .pfc-results h3 {
+  font-size: 30px;
+  margin: 20px 0 0 0;
+  display: inline-block;
+  background-color: #fff;
+  border: #333 solid 1px;
+  padding: 5px 15px;
+}
+p{
+  font-size: 16px;
+}
+.pfc-results .main-title{
+  display: inline-block;
   font-size: 40px;
+  font-weight: 700;
+}
+.score-item, .explanation-items,
+.sta-weight-items, .dif_weight-items {
+  width: 350px;
+}
+.mass, .calorie, .example-item{
+  width: 450px;
+}
+
+/* 　-- 身体測定の結果 --　 */
+.body-result h2 {
+  font-size: 30px;
+}
+.body-result h3 {
+  font-size: 36px;
+}
+.l-b-mass, .day-kcal{
+  width: 300px;
+}
+/* 　-- PFCについて --　 */
+.sec-title {
+  display: flex;
+  margin-top: 40px;
+}
+.pfc-results .sec-title h2 {
+  margin: auto 20px;
+  font-size: 30px;
+  background-color: #f4f7f8;
+}
+.title-img img {
+  width: auto;
+  height: 90px;
+}
+
+/* 　-- 参考例 --　 */
+
+section .example-items .example-flex{
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  width: 50%;
+}
+.example-items {
+  width: 1050px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  display: flex;
+  border: #333 solid 1px;
+  background-color: #fff;
+}
+.example-item{
   margin-top: 20px;
 }
-/* .body-result{
-
-} */
+.example-item p {
+  margin: auto 0px;
+}
+.example-item img {
+  width: auto;
+  height: 45px;
+}
+.Carbohydrate .example-items {
+  margin-bottom: 30px;
+}

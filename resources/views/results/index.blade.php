@@ -41,6 +41,7 @@
             <thead>
             <tr>
               <th>過去の測定日</th>
+              <th>除脂肪体重</th>
               <th></th>
             </tr>
             </thead>

@@ -14,6 +14,7 @@ class ResultController extends Controller
     public function index() {
         $bmis = Auth::user()->bmis()->get();
         $pfcs = Auth::user()->pfcs()->get();
+
         // dd(Auth::user());
 
         // $bmis = Auth::user()->bmis()->limit(10)->get();
