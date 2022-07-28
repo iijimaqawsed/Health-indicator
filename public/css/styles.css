@@ -43,6 +43,20 @@ a.my-navbar-item:hover {
   background-color: #fff;
 }
 
+/* ＊＊＊＊＊ 結果一覧画面 ＊＊＊＊＊ */
+.bmi .table th:first-child {
+  width: 60%;
+}
+.bmi .table th:last-child {
+  width: 10%;
+}
+.pfc .table th:first-child {
+  width: 70%;
+}
+.pfc .table th:last-child {
+  width: 10%;
+}
+
 /* ＊＊＊＊＊ BMI入力画面 ＊＊＊＊＊ */
 .bmi_mesure_form .col-md-10{
   padding-right: 0px;

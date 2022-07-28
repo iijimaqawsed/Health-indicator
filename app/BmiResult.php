@@ -4,9 +4,12 @@ namespace App;
 use Carbon\Carbon;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class BmiResult extends Model
 {
+    use SoftDeletes;
+
     const SCORE = [
         0 => [ 'label' => '　痩せ　', 'class' => 'label-primary', 'mes_class' => 'blue', 'message' => 
         'あなたは痩せ型もしくはモデル体型です。

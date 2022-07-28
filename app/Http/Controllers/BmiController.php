@@ -74,4 +74,9 @@ class BmiController extends Controller
         ]);
     }
 
+    public function delete(BmiResult $bmi){
+        $bmi->delete();
+        return redirect('/index');
+    }
+
 }

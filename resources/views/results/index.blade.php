@@ -3,7 +3,7 @@
 @section('content')
   <div class="container">
     <div class="row">
-    <div class="column col-md-6">
+    <div class="column col-md-6 bmi">
         <a href="/bmi/measure" class="btn btn-primary btn-block">BMI計測開始</a>
         <br>
         <div class="panel panel-default">
@@ -25,14 +25,16 @@
                 <td>
                   <span class="label {{ $bmi->score_class }}">{{ $bmi->score_label }}</span>
                 </td>
-                <td><a href="">削除</a></td>
+                <td><a class="b-delete" href="#">削除</a></td>
+                <td class="b-id" hidden>{{ $bmi->id }}</td>
               </tr>
+              <!-- route('bmi.delete', ['bmi' => $bmi->id]) -->
             @endforeach
             </tbody>
           </table>
         </div>
       </div>
-      <div class="column col-md-6">
+      <div class="column col-md-6 pfc">
         <a href="/pfc/measure" class="btn btn-primary btn-block">PFCバランス計測開始</a>
         <br>
         <div class="panel panel-default">
@@ -49,7 +51,8 @@
             @foreach($pfcs as $pfc)
             <tr>
                 <td><a href="{{ route('pfc.result', ['pfc' => $pfc->id]) }}" class="pfc-result-item">{{ $pfc->created_at }}</a></td>
-                <td><a href="">削除</a></td>
+                <td>{{$pfc->l_b_mass}}kg</td>
+                <td><a id="p-delete" href="{{ route('pfc.delete', ['pfc' => $pfc->id]) }}">削除</a></td>
               </tr>
             @endforeach
             </tbody>
@@ -59,14 +62,16 @@
     </div>
   </div>
 
-  <!-- <script>
-    document.getElementById('bmi').addEventListener('click', function(event) {
+  <script>
+    document.querySelector('.b-delete').addEventListener('click', function(event) {
       event.preventDefault();
-      window.location.href('#');
+      var b_confirm = (window.confirm('本当に削除しますか？'));
+
+      var content = $( this ).parent();
+      var b_id = content.find( '.b-id' )
+      if( b_confirm ) {
+        location.href = "{{ route('bmi.delete', ['bmi' => $bmi->id]) }}";
+      }
     });
-    document.getElementById('pfc').addEventListener('click', function(event) {
-      event.preventDefault();
-      window.location.href('#');
-    });
-  </script> -->
+  </script>
 @endsection

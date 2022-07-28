@@ -21,9 +21,11 @@ Route::get('/index','ResultController@index')->name('results.index');
 Route::get('/bmi/measure','BmiController@showMeasureForm')->name('bmi.measure');
 Route::post('/bmi/measure','BmiController@measure');
 Route::get('/bmi/{bmi}/result','BmiController@result')->name('bmi.result');
+Route::get('/bmi/{bmi}/delete','BmiController@delete')->name('bmi.delete');
 Route::get('/pfc/measure','PfcController@showMeasureForm')->name('pfc.measure');
 Route::post('/pfc/measure','PfcController@measure');
 Route::get('/pfc/{pfc}/result','PfcController@result')->name('pfc.result');
+Route::get('/pfc/{pfc}/delete','PfcController@delete')->name('pfc.delete');
 
 
 Route::get('/users/{user}','Controller@');

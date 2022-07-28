@@ -19,8 +19,6 @@ class PfcController extends Controller
         $pfc->weight = $request->weight;
         $pfc->body_fat = $request->body_fat;
 
-        Auth::user()->pfcs()->save($pfc);
-
 
         // 以下の計算をメソッドにまとめるか
         $weight = $request->weight;
@@ -28,6 +26,10 @@ class PfcController extends Controller
 
         $l_b_mass = round($weight - ($weight * ($body_fat/100)),2);
         $total_kcal = floor($l_b_mass * 40) ;
+
+        $pfc->l_b_mass = $l_b_mass;
+        Auth::user()->pfcs()->save($pfc);
+
         // 除脂肪体重と一日の摂取カロリーの計算
         $p_mass = floor($l_b_mass);
         $p_kcal = floor($p_mass * 4);
@@ -55,10 +57,8 @@ class PfcController extends Controller
 
     public function result(PfcResult $pfc) {
         // 以下の計算をメソッドにまとめるか
-        $weight = $pfc->weight;
-        $body_fat = $pfc->body_fat;
+        $l_b_mass = $pfc->l_b_mass;
 
-        $l_b_mass = round($weight - ($weight * ($body_fat/100)),2);
         $total_kcal = floor($l_b_mass * 40) ;
         // 除脂肪体重と一日の摂取カロリーの計算
         $p_mass = floor($l_b_mass);
@@ -82,5 +82,10 @@ class PfcController extends Controller
             'c_kcal' => $c_kcal,
 
         ]);
+    }
+
+    public function delete(PfcResult $pfc){
+        $pfc->delete();
+        return redirect('/index');
     }
 }

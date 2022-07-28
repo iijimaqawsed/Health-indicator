@@ -12,8 +12,8 @@ class ResultController extends Controller
 {
     //
     public function index() {
-        $bmis = Auth::user()->bmis()->get();
-        $pfcs = Auth::user()->pfcs()->get();
+        $bmis = Auth::user()->bmis()->orderby('id','desc')->get();
+        $pfcs = Auth::user()->pfcs()->orderby('id','desc')->get();
 
         // dd(Auth::user());
 
