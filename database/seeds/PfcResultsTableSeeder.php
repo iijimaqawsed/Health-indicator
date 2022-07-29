@@ -22,5 +22,23 @@ class PfcResultsTableSeeder extends Seeder
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
+        $user = DB::table('users')->first();
+        DB::table('pfc_results')->insert([
+            'user_id' => $user->id,
+            'weight' =>'60',
+            'body_fat' => '10',
+            'l_b_mass' => '54.0',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+        $user = DB::table('users')->first();
+        DB::table('pfc_results')->insert([
+            'user_id' => $user->id,
+            'weight' =>'48',
+            'body_fat' => '20',
+            'l_b_mass' => '38.4',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
     }
 }

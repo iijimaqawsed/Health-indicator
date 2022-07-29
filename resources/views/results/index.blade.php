@@ -25,10 +25,9 @@
                 <td>
                   <span class="label {{ $bmi->score_class }}">{{ $bmi->score_label }}</span>
                 </td>
-                <td><a class="b-delete" href="#">削除</a></td>
-                <td class="b-id" hidden>{{ $bmi->id }}</td>
+                <td><a class="b-delete" href="{{ route('bmi.delete', ['bmi' => $bmi->id]) }}">削除</a></td>
+                <td>{{$bmi->id}}</td>
               </tr>
-              <!-- route('bmi.delete', ['bmi' => $bmi->id]) -->
             @endforeach
             </tbody>
           </table>
@@ -52,7 +51,7 @@
             <tr>
                 <td><a href="{{ route('pfc.result', ['pfc' => $pfc->id]) }}" class="pfc-result-item">{{ $pfc->created_at }}</a></td>
                 <td>{{$pfc->l_b_mass}}kg</td>
-                <td><a id="p-delete" href="{{ route('pfc.delete', ['pfc' => $pfc->id]) }}">削除</a></td>
+                <td><a class="p-delete" href="{{ route('pfc.delete', ['pfc' => $pfc->id]) }}">削除</a></td>
               </tr>
             @endforeach
             </tbody>
@@ -63,15 +62,16 @@
   </div>
 
   <script>
-    document.querySelector('.b-delete').addEventListener('click', function(event) {
+    $( '.b-delete' ).on( 'click',function(event) {
+      if(confirm('本当に削除しますか？')) {
+    } else{
       event.preventDefault();
-      var b_confirm = (window.confirm('本当に削除しますか？'));
+    } });
+  $( '.p-delete' ).on( 'click',function(event) {
+    if(confirm('本当に削除しますか？')) {
+    } else{
+      event.preventDefault();
+    } });
+    </script>
 
-      var content = $( this ).parent();
-      var b_id = content.find( '.b-id' )
-      if( b_confirm ) {
-        location.href = "{{ route('bmi.delete', ['bmi' => $bmi->id]) }}";
-      }
-    });
-  </script>
 @endsection

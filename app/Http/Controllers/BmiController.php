@@ -47,7 +47,6 @@ class BmiController extends Controller
         Auth::user()->bmis()->save($bmi);
 
         return view('bmi/result', [
-            // ＊＊＊＊＊＊画面遷移先ファイルの作成＊＊＊＊＊
             'bmi' => $bmi,
             'weight' => $s_weight,
             'dif_weight' => $difference_weight,
