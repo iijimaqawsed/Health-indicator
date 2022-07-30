@@ -24,6 +24,7 @@ class BmiResultsTableSeeder extends Seeder
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
+
         DB::table('bmi_results')->insert([
             'user_id' => $user->id,
             'height' => '170',
@@ -33,6 +34,7 @@ class BmiResultsTableSeeder extends Seeder
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
+
         DB::table('bmi_results')->insert([
             'user_id' => $user->id,
             'height' => '170',
@@ -42,6 +44,7 @@ class BmiResultsTableSeeder extends Seeder
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
+
         DB::table('bmi_results')->insert([
             'user_id' => $user->id,
             'height' => '170',

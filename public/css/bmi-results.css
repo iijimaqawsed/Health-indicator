@@ -18,7 +18,7 @@ header .my-navbar {
 }
 .bmi-results h2 {
   font-size: 30px;
-  margin: 70px 0 0 0 ;
+  margin: 50px 0 0 0 ;
   font-weight: 500;
   background-color: rgb(188, 238, 238);
 }
@@ -35,17 +35,16 @@ header .my-navbar {
   background-color: rgb(240, 240, 240);
 }
 p{
-  font-size: 20px;
+  font-size: 16px;
+  line-height: 30px;
 }
 
 /* 　-- 上部の結果表 --　 */
 .bmi-result{
   display: inline-block;
-  padding: 10px 15px;
-  /* vertical-align: middle; */
 }
 .bmi-results .main-title{
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 700;
   display: inline-block;
   margin-top: 30px;
@@ -63,11 +62,19 @@ p{
 }
 
 /* 　-- BMIの評価 --　 */
+.score-item img{
+  height: 200px;
+  width: auto;
+}
 .message::-webkit-scrollbar {
   display:none;
 }
 .message{
-  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  height: 110px;
+  padding: 5px 15px;
+  margin: 20px 0 0 0;
   text-align: left;
   font-size: 16px;
   font-weight: 700;
@@ -75,27 +82,32 @@ p{
   font-family: sans-serif;
   border: #333 solid 3px;
 }
+/* スコアに対する変化装飾 */
 .blue{
   border: rgb(101, 101, 255) solid 3px;
   background-color: rgb(214, 232, 255);
+  border-radius: 0%;
 }
 .green{
   border: rgb(102, 245, 102) solid 3px;
   background-color: rgb(214, 255, 217);
+  border-radius: 0%;
 }
 .yellow{
   border: yellow solid 3px;
-  background-color: rgb(247, 255, 172);
+  background-color: rgb(240, 246, 185);
+  border-radius: 0%;
 }
 .red{
   border: rgb(255, 137, 137) solid 3px;
   background-color: rgb(255, 214, 214);
+  border-radius: 0%;
 }
-
 
 /* 　-- BMIのスコア基準の説明欄 --　 */
 .explanation-items {
   width: 200px;
+  margin: 20px 0 0 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -104,22 +116,55 @@ p{
 .score-explanation .explanation-item {
   width: 150px;
 }
+.score-explanation .explanation-item:nth-child(n+3) {
+  margin-top: 43px;
+}
 .score-explanation img {
   width: auto;
-  height: 100px;
+  height: 120px;
   flex-wrap: wrap;
 }
 .score-explanation p{
   font-size: 16px;
+  margin: 0px;
 }
 .score-item, .explanation-items,
 .sta-weight-items, .dif_weight-items {
   width: 350px;
 }
-.score-item h3{
-  margin-top: 40px;
-}
-
 .weight-items{
   margin-bottom: 30px;
+}
+.result-explanation span{
+  color: red;
+}
+.skinny p{
+  border: #333 solid 1px;
+  background-color: rgb(224, 224, 249);
+}
+.standard p{
+  border: #333 solid 1px;
+  background-color: rgb(225, 249, 224);
+}
+.obese p{
+  border: #333 solid 1px;
+  background-color: rgb(247, 249, 224);
+}
+.obesity p{
+  border: #333 solid 1px;
+  background-color: rgb(249, 224, 224);
+}
+.result-explanation p{
+  margin: 0px;
+}
+
+/* 画面下部、体重について */
+.output{
+  display: flex;
+  justify-content: center;
+}
+.unit{
+  font-size: 40px;
+  margin: 20px 0 20px 1rem;
+  padding: 5px 0px;
 }

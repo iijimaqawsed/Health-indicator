@@ -16,16 +16,16 @@ class BmiController extends Controller
 
     public function measure(MeasureBmi $request) {
         $bmi = new BmiResult();
+        // 身長体重の入力
         $bmi->height = $request->height;
         $bmi->weight = $request->weight;
-        // 身長体重の入力
 
         $height = $request->height;
         $weight = $request->weight;
 
+        // BMIの計算
         $format_height = pow($height/100,2);
         $bmi->result = round($weight / $format_height,2);
-        // BMIの計算
 
 
         if($bmi->result < 18.5) {
@@ -38,11 +38,11 @@ class BmiController extends Controller
             $bmi->score = 3;
         }
 
+        //----- 身長に対しての標準体重----
         $s_weight = round($format_height*22, 2);
-        // 身長に対しての標準体重
 
-        $difference_weight = $weight - $s_weight;
         // 標準体重との実測体重との差
+        $difference_weight = $weight - $s_weight;
 
         Auth::user()->bmis()->save($bmi);
 
@@ -61,11 +61,11 @@ class BmiController extends Controller
 
 
 
-        $s_weight = round($format_height*22, 2);
         // 身長に対しての標準体重
+        $s_weight = round($format_height*22, 2);
 
-        $difference_weight = $weight - $s_weight;
         // 標準体重との実測体重との差
+        $difference_weight = $weight - $s_weight;
         return view('bmi/result',[
             'bmi' => $bmi,
             'weight' => $s_weight,

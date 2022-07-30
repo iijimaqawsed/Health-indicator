@@ -41,8 +41,8 @@ class PfcController extends Controller
         $c_mass = floor($c_kcal / 4);
         // 各摂取カロリー、質量の計算
 
-        return view('pfc/result', [
-            // ＊＊＊＊＊＊画面遷移先ファイルの作成＊＊＊＊＊
+        return view('pfc/result', 
+        [
             'pfc' => $pfc,
             'l_b_mass' => $l_b_mass,
             'total_kcal' => $total_kcal,

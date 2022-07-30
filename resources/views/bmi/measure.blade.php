@@ -15,7 +15,6 @@
               </div>
             @endif
             <form class="bmi_mesure_form" action="{{route('bmi.measure')}}" method="POST">
-              <!-- ＊＊＊＊＊送信先の情報の指定＊＊＊＊＊ -->
               @csrf
               <div class="form-group">
                 <label for="height">身長</label>

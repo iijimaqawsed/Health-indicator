@@ -26,7 +26,6 @@
                   <span class="label {{ $bmi->score_class }}">{{ $bmi->score_label }}</span>
                 </td>
                 <td><a class="b-delete" href="{{ route('bmi.delete', ['bmi' => $bmi->id]) }}">削除</a></td>
-                <td>{{$bmi->id}}</td>
               </tr>
             @endforeach
             </tbody>
@@ -49,8 +48,8 @@
             <tbody>
             @foreach($pfcs as $pfc)
             <tr>
-                <td><a href="{{ route('pfc.result', ['pfc' => $pfc->id]) }}" class="pfc-result-item">{{ $pfc->created_at }}</a></td>
-                <td>{{$pfc->l_b_mass}}kg</td>
+                <td><a href="{{ route('pfc.result', ['pfc' => $pfc->id]) }}" class="pfc-result-item">{{ $pfc->formatted_created_date }}</a></td>
+                <td>{{ $pfc->l_b_mass }}kg</td>
                 <td><a class="p-delete" href="{{ route('pfc.delete', ['pfc' => $pfc->id]) }}">削除</a></td>
               </tr>
             @endforeach
