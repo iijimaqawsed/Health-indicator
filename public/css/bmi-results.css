@@ -3,7 +3,8 @@ header .my-navbar {
   margin-bottom: 0px;
 }
 .bmi-results{
-  width: 1440px;
+  max-width: 1440px;
+  margin: 0 auto;
   /* display: flex; */
   /* justify-content: center; */
   box-sizing: border-box;
@@ -159,12 +160,13 @@ p{
 }
 
 /* 画面下部、体重について */
+/* 出力値と単位を分ける */
 .output{
   display: flex;
   justify-content: center;
 }
 .unit{
   font-size: 40px;
-  margin: 20px 0 20px 1rem;
+  margin: 28px 0 20px 1rem;
   padding: 5px 0px;
 }

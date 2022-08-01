@@ -10,14 +10,15 @@
     <div class="result-contents">
       <div class="bmi-result">
         <h2 class="main-title">{{ Auth::user()->name }} さんのBMI結果数値</h2><br>
-        <div>
-          <h3 class="output">{{ $bmi->result }}</h3>
+        <div class="output">
+          <h3>{{ $bmi->result }}</h3>
         </div>
         <div class="result-explanation">
           <p>BMIの計算式：体重(kg) ÷ ( 身長(cm) / 100)<sup>2</sup></p>
           <p>BMIの結果数値は身長と体重から計算する体格指数です。</p>
         </div>
       </div>
+      <!-- 測定結果画面 -->
       <div class="bmi-score">
         <div class="score-items flex-items">
           <div class="score-item">

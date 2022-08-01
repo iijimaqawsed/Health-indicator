@@ -19,17 +19,20 @@
             </thead>
             <tbody>
             @foreach($bmis as $bmi)
-            <tr>
+            <tr class="b-list-item">
                 <td><a href="{{ route('bmi.result', ['bmi' => $bmi->id]) }}" class="bmi-result-item">{{ $bmi->formatted_created_date }}</a></td>
                 <td>{{ $bmi->result }}</td>
                 <td>
                   <span class="label {{ $bmi->score_class }}">{{ $bmi->score_label }}</span>
                 </td>
-                <td><a class="b-delete" href="{{ route('bmi.delete', ['bmi' => $bmi->id]) }}">削除</a></td>
+                <td><a class="delete" href="{{ route('bmi.delete', ['bmi' => $bmi->id]) }}">削除</a></td>
               </tr>
             @endforeach
             </tbody>
           </table>
+        </div>
+        <div class="b-list-btn">
+          <button>もっと見る</button>
         </div>
       </div>
       <div class="column col-md-6 pfc">
@@ -47,30 +50,25 @@
             </thead>
             <tbody>
             @foreach($pfcs as $pfc)
-            <tr>
+            <tr class="p-list-item">
                 <td><a href="{{ route('pfc.result', ['pfc' => $pfc->id]) }}" class="pfc-result-item">{{ $pfc->formatted_created_date }}</a></td>
                 <td>{{ $pfc->l_b_mass }}kg</td>
-                <td><a class="p-delete" href="{{ route('pfc.delete', ['pfc' => $pfc->id]) }}">削除</a></td>
+                <td><a class="delete" href="{{ route('pfc.delete', ['pfc' => $pfc->id]) }}">削除</a></td>
               </tr>
             @endforeach
             </tbody>
           </table>
         </div>
+        <div class="p-list-btn">
+          <button>もっと見る</button>
+        </div>
       </div>
     </div>
   </div>
 
-  <script>
-    $( '.b-delete' ).on( 'click',function(event) {
-      if(confirm('本当に削除しますか？')) {
-    } else{
-      event.preventDefault();
-    } });
-  $( '.p-delete' ).on( 'click',function(event) {
-    if(confirm('本当に削除しますか？')) {
-    } else{
-      event.preventDefault();
-    } });
-    </script>
+  @section('scripts')
+  <script src="/js/script.js">
+  </script>
+  @endsection
 
 @endsection

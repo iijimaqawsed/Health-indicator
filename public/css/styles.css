@@ -28,7 +28,7 @@ body {
 
 .my-navbar-brand:hover,
 a.my-navbar-item:hover {
-  color: #ffffff;
+  color: #ecae52;
 }
 
 .table td:nth-child(2),
@@ -55,6 +55,37 @@ a.my-navbar-item:hover {
 }
 .pfc .table th:last-child {
   width: 10%;
+}
+/* --- もっと見るボタン --- */
+.b-list-item, .p-list-item {
+  opacity: 1;
+}
+.b-list-item.is-hidden, .p-list-item.is-hidden {
+  opacity: 0;
+  height: 0;
+  margin: 0;
+  display:none;
+}
+.b-list-btn, .p-list-btn {
+  margin-top: 20px;
+}
+.b-list-btn.is-btn-hidden, .p-list-btn.is-btn-hidden {
+display:none;
+}
+.b-list-btn button, .p-list-btn button {
+  background-color: #333;
+  color:#fff;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  height: 32px;
+  line-height: 32px;
+  width: 120px;
+}
+.b-list-btn button:hover,
+.p-list-btn button:hover {
+  color: #ecae52;
 }
 
 /* ＊＊＊＊＊ BMI入力画面 ＊＊＊＊＊ */

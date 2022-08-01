@@ -1,46 +1,49 @@
 'use strict';
-$(function () {
-  // liの数を取得
-  const listItems = $(".js-accordion li").length;
-  $(".js-accordion").each(function () {
-    // 最初に表示させるliの数
-    let num = 5,
-      // 閉じた時に表示させるliの数
-      closeNum = num - 1;
-    // 最初はもっと見るボタン表示、閉じるボタン非表示
-    $(this).find(".js-btn-more").show();
-    $(this).find(".js-btn-close").hide();
-    // 5行目まで表示
-    $(this)
-      .find("li:not(:lt(" + num + "))")
-      .hide();
-    // もっと見るボタンがクリックされた時
-    $(".js-btn-more").click(function () {
-      // numに+5ずつしていく = 5行ずつ追加する
-      num += 5;
-      $(this)
-        .parent()
-        .find("li:lt(" + num + ")")
-        .slideDown();
-      // liの数よりnumが多い時、
-      if (listItems <= num) {
-        // もっと見るボタン非表示
-        $(".js-btn-more").hide();
-        // 閉じるボタン表示
-        $(".js-btn-close").show();
-        // 閉じるボタンがクリックされたら、
-        $(".js-btn-close").click(function () {
-          $(this)
-            .parent()
-            .find("li:gt(" + closeNum + ")")
-            // 6行目以降は非表示
-            .slideUp();
-          // 閉じるボタンを非表示
-          $(this).hide();
-          // もっと見るボタン表示に
-          $(".js-btn-more").show();
-        });
-      }
-    });
-  });
+/* BMI表示欄のもっと見るボタンの処理 */
+/* ここには、表示するリストの数を指定します。 */
+var moreNum = 5;
+
+/* 表示するリストの数以降のリストを隠しておきます。 */
+$('.b-list-item:nth-child(n + ' + (moreNum + 1) + ')').addClass('is-hidden');
+
+/* 全てのリストを表示したら「もっとみる」ボタンをフェードアウトします。 */
+$('.b-list-btn').on('click', function() {
+  $('.b-list-item.is-hidden').slice(0, moreNum).removeClass('is-hidden');
+  if ($('.b-list-item.is-hidden').length === 0) {
+    $('.b-list-btn').fadeOut();
+  }
 });
+
+/* リストの数が、表示するリストの数以下だった場合、「もっとみる」ボタンを非表示にします。 */
+$(function() {
+  var b_list = $(".table .b-list-item").length;
+  if (b_list-1 < moreNum) {
+    $('.b-list-btn').addClass('is-btn-hidden');
+  }
+  console.log(b_list);
+});
+
+/* PFC表示欄のもっと見るボタンの処理 */
+$('.p-list-item:nth-child(n + ' + (moreNum + 1) + ')').addClass('is-hidden');
+
+$('.p-list-btn').on('click', function() {
+  $('.p-list-item.is-hidden').slice(0, moreNum).removeClass('is-hidden');
+  if ($('.p-list-item.is-hidden').length === 0) {
+    $('.p-list-btn').fadeOut();
+  }
+});
+
+$(function() {
+  var p_list = $(".table .p-list-item").length;
+    if (p_list-1 < moreNum) {
+      $('.p-list-btn').addClass('is-btn-hidden');
+      console.log(p_list);
+  }
+});
+
+// 削除機能のconfirm実装
+$( '.delete' ).on( 'click',function(event) {
+  if(confirm('本当に削除しますか？')) {
+} else{
+  event.preventDefault();
+} });

@@ -5,6 +5,7 @@ header .my-navbar {
 .pfc-results{
   box-sizing: border-box;
   max-width: 1440px;
+  margin: 0 auto;
 }
 .flex-items{
   display: flex;
@@ -16,7 +17,7 @@ header .my-navbar {
 }
 .pfc-results h2 {
   font-size: 24px;
-  margin: 30px 0 0 0;
+  margin: 0px 0 0 0;
   font-weight: 500;
 }
 .pfc-results h2:not(.pfc-results .main-title, .sec-title h2){
@@ -26,6 +27,7 @@ header .my-navbar {
   background-color: #f4f7f8;
 } */
 .pfc-results h3 {
+  width: 95px;
   font-size: 30px;
   margin: 20px 0 0 0;
   display: inline-block;
@@ -36,11 +38,6 @@ header .my-navbar {
 p{
   font-size: 16px;
 }
-.pfc-results .main-title{
-  display: inline-block;
-  font-size: 40px;
-  font-weight: 700;
-}
 .score-item, .explanation-items,
 .sta-weight-items, .dif_weight-items {
   width: 350px;
@@ -49,20 +46,43 @@ p{
   width: 450px;
 }
 
+/* 出力値と単位を分ける */
+.output{
+  display: flex;
+  justify-content: center;
+}
+.unit{
+  font-size: 30px;
+  margin: 20px 0 0 1rem;
+}
+
 /* 　-- 身体測定の結果 --　 */
+.pfc-results .main-title{
+  display: inline-block;
+  font-size: 40px;
+  font-weight: 700;
+  margin-top: 30px;
+}
 .body-result h2 {
   font-size: 30px;
+  margin-top: 20px;
 }
 .body-result h3 {
+  width: 120px;
   font-size: 36px;
 }
 .l-b-mass, .day-kcal{
   width: 300px;
 }
+.body-result .unit{
+  font-size: 36px;
+}
+
 /* 　-- PFCについて --　 */
 .sec-title {
   display: flex;
-  margin-top: 40px;
+  margin-top: 30px;
+  margin-left: 50px;
 }
 .pfc-results .sec-title h2 {
   margin: auto 20px;
@@ -75,30 +95,47 @@ p{
 }
 
 /* 　-- 参考例 --　 */
-
+.example-items.flex-items{
+  justify-content: start;
+}
 section .example-items .example-flex{
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: center; */
-  width: 50%;
+  width: calc(100%/3);
 }
 .example-items {
   width: 1050px;
-  margin: 0 auto;
+  margin: 20px auto;
+  padding: 10px 15px;
   flex-wrap: wrap;
   display: flex;
   border: #333 solid 1px;
-  background-color: #fff;
+  background-color: #f3f3b7;
 }
 .example-item{
-  margin-top: 20px;
+  padding: 5px;
+  /* margin: 5px auto; */
 }
 .example-item p {
   margin: auto 0px;
 }
 .example-item img {
   width: auto;
-  height: 45px;
+  height: 60px;
+}
+/* .example-item.touhu img {
+  width: auto;
+  height: 55px;
+} */
+.example-item span{
+  font-size: 24px;
+  font-weight: 700;
+
+  /* -- 青っぽい色 -- */
+  /* color: rgb(80, 80, 255); */
+
+  /* -- 赤っぽい色 -- */
+  color: rgb(255, 106, 106);
 }
 .Carbohydrate .example-items {
   margin-bottom: 30px;

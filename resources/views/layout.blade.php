@@ -44,9 +44,8 @@
       document.getElementById('logout-form').submit();
     });
   </script>
-  @endif
-  <script src="/js/script.js">
-  </script>
+@endif
+
 @yield('scripts')
 </body>
 </html>
