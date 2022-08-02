@@ -106,10 +106,6 @@
                 <p>肥満体型<br>30以上</p>
               </div>
             </div>
-            <!-- <div class="result-img">
-            </div>
-            <div class="result-explanation">
-            </div> -->
           </div>
         </div>
         <div class="weight-items flex-items">

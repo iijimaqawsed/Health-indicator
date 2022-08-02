@@ -15,6 +15,7 @@ class BmiResultsTableSeeder extends Seeder
     {
         $user = DB::table('users')->first();
 
+        // 男性用アカウント
         DB::table('bmi_results')->insert([
             'user_id' => $user->id,
             'height' => '170',
@@ -47,6 +48,47 @@ class BmiResultsTableSeeder extends Seeder
 
         DB::table('bmi_results')->insert([
             'user_id' => $user->id,
+            'height' => '170',
+            'weight' => '90',
+            'result' => '31.14',
+            'score' => '3',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+
+        // 女性用アカウント
+        DB::table('bmi_results')->insert([
+            'user_id' => 2,
+            'height' => '170',
+            'weight' => '58',
+            'result' => '20',
+            'score' => '1',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+
+        DB::table('bmi_results')->insert([
+            'user_id' => 2,
+            'height' => '170',
+            'weight' => '45',
+            'result' => '15.57',
+            'score' => '0',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+
+        DB::table('bmi_results')->insert([
+            'user_id' => 2,
+            'height' => '170',
+            'weight' => '80',
+            'result' => '27.68',
+            'score' => '2',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+
+        DB::table('bmi_results')->insert([
+            'user_id' => 2,
             'height' => '170',
             'weight' => '90',
             'result' => '31.14',

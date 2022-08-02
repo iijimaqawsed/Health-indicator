@@ -23,8 +23,11 @@ class BmiController extends Controller
         $height = $request->height;
         $weight = $request->weight;
 
+        // 身長を加工した数値、標準体重の計算結果、標準体重との差の取得
+        list($format_height, $s_weight, $difference_weight) =
+        $this->weightMeasure($height, $weight);
+
         // BMIの計算
-        $format_height = pow($height/100,2);
         $bmi->result = round($weight / $format_height,2);
 
 
@@ -37,12 +40,6 @@ class BmiController extends Controller
         } elseif($bmi->result >= 30){
             $bmi->score = 3;
         }
-
-        //----- 身長に対しての標準体重----
-        $s_weight = round($format_height*22, 2);
-
-        // 標準体重との実測体重との差
-        $difference_weight = $weight - $s_weight;
 
         Auth::user()->bmis()->save($bmi);
 
@@ -57,15 +54,10 @@ class BmiController extends Controller
         $height = $bmi->height;
         $weight = $bmi->weight;
 
-        $format_height = pow($height/100,2);
+        // 標準体重の計算結果、標準体重との差の取得
+        list($format_height, $s_weight, $difference_weight) =
+        $this->weightMeasure($height, $weight);
 
-
-
-        // 身長に対しての標準体重
-        $s_weight = round($format_height*22, 2);
-
-        // 標準体重との実測体重との差
-        $difference_weight = $weight - $s_weight;
         return view('bmi/result',[
             'bmi' => $bmi,
             'weight' => $s_weight,
@@ -76,6 +68,20 @@ class BmiController extends Controller
     public function delete(BmiResult $bmi){
         $bmi->delete();
         return redirect('/index');
+    }
+
+    public function weightMeasure($height, $weight){
+
+        // 身長の数値の加工
+        $format_height = pow($height/100,2);
+
+        // 身長に対した標準体重の計算
+        $s_weight = round($format_height*22, 2);
+
+        // 標準体重と現在の体重との差
+        $difference_weight = $weight - $s_weight;
+
+        return array($format_height, $s_weight, $difference_weight);
     }
 
 }
