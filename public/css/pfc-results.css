@@ -20,12 +20,6 @@ header .my-navbar {
   margin: 0px 0 0 0;
   font-weight: 500;
 }
-.pfc-results h2:not(.pfc-results .main-title, .sec-title h2){
-  background-color: rgb(188, 238, 238);
-}
-/* .pfc-results .main-title, .sec-title h2{
-  background-color: #f4f7f8;
-} */
 .pfc-results h3 {
   width: 95px;
   font-size: 30px;
@@ -42,8 +36,8 @@ p{
 .sta-weight-items, .dif_weight-items {
   width: 350px;
 }
-.mass, .calorie, .example-item{
-  width: 450px;
+.mass, .calorie{
+  width: 350px;
 }
 
 /* 出力値と単位を分ける */
@@ -59,7 +53,7 @@ p{
 /* 　-- 身体測定の結果 --　 */
 .pfc-results .main-title{
   display: inline-block;
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 700;
   margin-top: 30px;
 }
@@ -123,19 +117,13 @@ section .example-items .example-flex{
   width: auto;
   height: 60px;
 }
-/* .example-item.touhu img {
+.example-item.touhu img {
   width: auto;
   height: 55px;
-} */
+}
 .example-item span{
   font-size: 24px;
   font-weight: 700;
-
-  /* -- 青っぽい色 -- */
-  /* color: rgb(80, 80, 255); */
-
-  /* -- 赤っぽい色 -- */
-  color: rgb(255, 106, 106);
 }
 .Carbohydrate .example-items {
   margin-bottom: 30px;

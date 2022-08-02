@@ -17,8 +17,7 @@
 
 // Route::get('/','Controller@');
 Route::group(['middleware' => 'auth'], function(){
-  Route::get('/','HomeController@index');
-  Route::get('/index','ResultController@index')->name('results.index');
+  Route::get('/','ResultController@index')->name('results.index');
   Route::get('/bmi/measure','BmiController@showMeasureForm')->name('bmi.measure');
   Route::post('/bmi/measure','BmiController@measure');
   Route::get('/pfc/measure','PfcController@showMeasureForm')->name('pfc.measure');

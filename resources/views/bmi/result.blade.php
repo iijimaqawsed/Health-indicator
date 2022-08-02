@@ -2,7 +2,15 @@
 
 
 @section('styles')
-<link rel="stylesheet" href="/css/bmi-results.css">
+  <link rel="stylesheet" href="/css/bmi-results.css">
+
+  <!-- ログインユーザーの性別によって色を変化させる -->
+  @if(Auth::user()->gender === 0)
+    <link rel="stylesheet" href="/css/man-result.css">
+  @endif
+  @if(Auth::user()->gender === 1)
+    <link rel="stylesheet" href="/css/woman-result.css">
+  @endif
 @endsection
 
 @section('content')

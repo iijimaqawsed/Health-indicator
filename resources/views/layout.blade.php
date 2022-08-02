@@ -15,7 +15,7 @@
 <body>
 <header>
   <nav class="my-navbar">
-    <a class="my-navbar-brand" href="/index">helth Indicator</a>
+    <a class="my-navbar-brand" href="/">helth Indicator</a>
     <div class="my-navbar-control">
       @if(Auth::check())
         <span class="my-navbar-item">ようこそ, {{ Auth::user()->name }}さん</span>

@@ -1,0 +1,12 @@
+/* 女性用BMI結果画面の装飾 */
+.bmi-results h2 {
+  background-color: rgb(253, 225, 225);
+}
+
+/* 女性用PFC結果画面の装飾 */
+.pfc-results h2:not(.pfc-results .main-title, .sec-title h2){
+  background-color: rgb(255, 225, 225);
+}
+.example-item span{
+  color: rgb(255, 106, 106);
+}
