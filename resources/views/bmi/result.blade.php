@@ -141,6 +141,7 @@
           </div>
         </div>
       </div>
+      <a href="{{ route('results.index') }}" class="btn btn-info">ホームへ戻る</a>
     </div>
   </div>
 @endsection

@@ -70,8 +70,6 @@ p{
   display:none;
 }
 .message{
-  display: flex;
-  align-items: center;
   height: 110px;
   padding: 5px 15px;
   margin: 20px 0 0 0;
@@ -168,4 +166,35 @@ p{
   font-size: 40px;
   margin: 28px 0 20px 1rem;
   padding: 5px 0px;
+}
+.result-contents .btn {
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto 30px auto;
+}
+
+/* スマートフォン向けCSS */
+@media (max-width: 767px) {
+  .flex-items{
+    display: block;
+  }
+  .bmi-results h2 {
+    width: 350px;
+    display: inline-block;
+    margin-top: 30px;
+  }
+  .score-item, .explanation-items, .sta-weight-items, .dif_weight-items{
+    margin: 20px auto 0px auto;
+  }
+  .weight-items .output::before{
+    content: "";
+    width: 52.25px;
+  }
+}
+
+@media (max-width: 549px){
+  .bmi-result .result-explanation{
+    width: 350px;
+    margin-top: 25px;
+  }
 }

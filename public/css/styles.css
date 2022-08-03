@@ -82,6 +82,7 @@ display:none;
   height: 32px;
   line-height: 32px;
   width: 120px;
+  border-radius: 5px;
 }
 .b-list-btn button:hover,
 .p-list-btn button:hover {

@@ -128,3 +128,6 @@ section .example-items .example-flex{
 .Carbohydrate .example-items {
   margin-bottom: 30px;
 }
+.result-contents .btn {
+  margin-bottom: 30px;
+}
