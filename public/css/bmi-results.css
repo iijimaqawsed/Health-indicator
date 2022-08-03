@@ -130,9 +130,6 @@ p{
 .sta-weight-items, .dif_weight-items {
   width: 350px;
 }
-.weight-items{
-  margin-bottom: 30px;
-}
 .result-explanation span{
   color: red;
 }
@@ -155,6 +152,9 @@ p{
 .result-explanation p{
   margin: 0px;
 }
+.weight-items{
+  margin-bottom: 30px;
+}
 
 /* 画面下部、体重について */
 /* 出力値と単位を分ける */
@@ -162,21 +162,27 @@ p{
   display: flex;
   justify-content: center;
 }
+.weight-items .output::before{
+  content: "";
+  width: 55px;
+}
 .unit{
   font-size: 40px;
+  width: 45px;
   margin: 28px 0 20px 1rem;
   padding: 5px 0px;
 }
 .result-contents .btn {
-  display: inline-block;
-  text-align: center;
-  margin: 0 auto 30px auto;
+  margin: 30px 0 50px 0;
 }
 
-/* スマートフォン向けCSS */
+/* ----- スマートフォン向けCSS ----- */
 @media (max-width: 767px) {
   .flex-items{
     display: block;
+  }
+  .bmi-results .main-title{
+    font-size: 30px;
   }
   .bmi-results h2 {
     width: 350px;
@@ -186,13 +192,15 @@ p{
   .score-item, .explanation-items, .sta-weight-items, .dif_weight-items{
     margin: 20px auto 0px auto;
   }
-  .weight-items .output::before{
-    content: "";
-    width: 52.25px;
+  .bmi-result h3{
+    font-size: 45px;
+    width: 175px;
+    padding: 5px 10px;
   }
 }
 
-@media (max-width: 549px){
+/* ----- 上部のBMI説明欄の縮小 ----- */
+@media (max-width: 599px){
   .bmi-result .result-explanation{
     width: 350px;
     margin-top: 25px;

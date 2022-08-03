@@ -32,10 +32,6 @@ header .my-navbar {
 p{
   font-size: 16px;
 }
-.score-item, .explanation-items,
-.sta-weight-items, .dif_weight-items {
-  width: 350px;
-}
 .mass, .calorie{
   width: 350px;
 }
@@ -89,16 +85,14 @@ p{
 }
 
 /* 　-- 参考例 --　 */
-.example-items.flex-items{
-  justify-content: start;
-}
 section .example-items .example-flex{
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   width: calc(100%/3);
 }
 .example-items {
-  width: 1050px;
+  width: 1100px;
   margin: 20px auto;
   padding: 10px 15px;
   flex-wrap: wrap;
@@ -106,9 +100,48 @@ section .example-items .example-flex{
   border: #333 solid 1px;
   background-color: #f3f3b7;
 }
+/* 参考例レイアウト調整 */
+
+/* --- たんぱく質欄 --- */
+.ro-suniku.example-item::after{
+  content: "";
+  width: 20px;
+}
+.egg.example-item::after{
+  content: "";
+  width: 7px;
+}
+.natto.example-item::after{
+  content: "";
+  width: 20px;
+}
+
+/* --- 脂質欄 --- */
+.oil.example-item::after{
+  content: "";
+  width: 12px;
+}
+.butter.example-item::after{
+  content: "";
+  width: 38px;
+}
+
+/* --- 炭水化物欄 --- */
+.rice.example-item::after{
+  content: "";
+  width: 90px;
+}
+.cola.example-item::after{
+  content: "";
+  width: 6px;
+}
+.udon.example-item::after{
+  content: "";
+  width: 25px;
+}
+
 .example-item{
   padding: 5px;
-  /* margin: 5px auto; */
 }
 .example-item p {
   margin: auto 0px;
@@ -116,10 +149,6 @@ section .example-items .example-flex{
 .example-item img {
   width: auto;
   height: 60px;
-}
-.example-item.touhu img {
-  width: auto;
-  height: 55px;
 }
 .example-item span{
   font-size: 24px;
@@ -129,5 +158,109 @@ section .example-items .example-flex{
   margin-bottom: 30px;
 }
 .result-contents .btn {
-  margin-bottom: 30px;
+  margin: 30px 0 50px 0;
+
+}
+
+/* ----- 参考例、レスポンシブ ----- */
+@media (max-width: 1149px) {
+  section .example-items .example-flex{
+    width: calc(100%/2);
+  }
+  .example-items {
+  width: 740px;
+  }
+
+  /* 各参考例、レイアウト調整 */
+  /* --- たんぱく質欄 --- */
+  .egg.example-item::after{
+    content: "";
+    width: 60px;
+  }
+  .natto.example-item::after{
+    content: "";
+    width: 40px;
+  }
+  .natto.example-item::after{
+    content: "";
+    width: 35px;
+  }
+  .milk.example-item::after{
+    content: "";
+    width: 35px;
+  }
+  .sake.example-item::after{
+    content: "";
+    width: 20px;
+  }
+
+  /* --- 脂質欄 --- */
+  .oil.example-item::after{
+    content: "";
+    width: 57px;
+  }
+  .butter.example-item::after{
+    content: "";
+    width: 35px;
+  }
+  .tonkatsu.example-item::after{
+    content: "";
+    width: 47px;
+  }
+
+  /* --- 炭水化物欄 --- */
+  .bread.example-item::after{
+    content: "";
+    width: 12px;
+  }
+  .udon.example-item::after{
+    content: "";
+    width: 75px;
+  }
+  .cola.example-item::after{
+    content: "";
+    width: 12px;
+  }
+  .honey.example-item::after{
+    content: "";
+    width: 52px;
+  }
+}
+
+/* ----- スマートフォン向けCSS ----- */
+@media (max-width: 767px) {
+  .flex-items{
+    display: block;
+  }
+
+  /* 中心揃え */
+  .pfc-results h2{
+    margin-top: 20px;
+  }
+  .l-b-mass, .day-kcal, .mass, .calorie{
+    margin: 0px auto;
+  }
+  .sec-title {
+    display: flex;
+    margin-top: 30px;
+    margin-left: 50px;
+  }
+  section .example-items .example-flex{
+    width: calc(100%);
+  }
+  .example-items {
+  width: 500px;
+  }
+
+  /* 説明画像サイズを下げる */
+  /* .example-item img {
+    width: auto;
+    height: 40px;
+  } */
+}
+
+@media (max-width: 550px) {
+  .example-items {
+    width: 80%;
+  }
 }

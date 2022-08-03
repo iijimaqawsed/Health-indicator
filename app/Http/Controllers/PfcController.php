@@ -68,7 +68,7 @@ class PfcController extends Controller
 
         // 各参考値、計算結果の取得
         list($p_example, $f_example, $c_example) =
-        $this->exampleMeasure($p_mass, $f_mass, $c_mass, );
+        $this->exampleMeasure($p_mass, $f_mass, $c_mass);
 
         return view('pfc/result',[
             'pfc' => $pfc,
@@ -106,7 +106,7 @@ class PfcController extends Controller
     }
 
     // 各参考値、算出メソッド
-    public function exampleMeasure($p_mass, $f_mass, $c_mass, ){
+    public function exampleMeasure($p_mass, $f_mass, $c_mass){
 
         // たんぱく質の参考値
         $p_example = [

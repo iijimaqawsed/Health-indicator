@@ -89,6 +89,15 @@ display:none;
   color: #ecae52;
 }
 
+@media (max-width: 991px) {
+  .bmi {
+    margin-bottom: 50px;
+  }
+  .pfc{
+    margin-bottom: 50px;
+  }
+}
+
 /* ＊＊＊＊＊ BMI入力画面 ＊＊＊＊＊ */
 .bmi_mesure_form .col-md-10{
   padding-right: 0px;

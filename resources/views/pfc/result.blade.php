@@ -116,9 +116,9 @@
         <div class="example-items">
           <div class="oil example-item example-flex">
             <img src="/images/food_sald_oil.png" alt="サラダ油の画像">
-            <p>サラダ油ー<span>{{ $f_example['oil'] }}</span>g分の脂質</p>
+            <p>サラダ油<span>{{ $f_example['oil'] }}</span>g分の脂質</p>
           </div>
-          <div class="baraniku example-item example-flex">
+          <div class="butter example-item example-flex">
             <img src="/images/food_cheese_butter4.png" alt="バターの画像">
             <p>バター<span>{{ $f_example['butter'] }}</span>g分の脂質</p>
           </div>
@@ -164,7 +164,7 @@
         </div>
         <!-- 炭水化物参考例 -->
         <div class="example-items flex-items">
-          <div class="gohan example-item example-flex">
+          <div class="rice example-item example-flex">
             <img src="/images/amount_gohan_ochawan3.png" alt="ご飯の画像">
             <p>ご飯<span>{{ $c_example['rice'] }}</span>杯分の炭水化物</p>
           </div>
@@ -180,7 +180,7 @@
             <img src="/images/food_frenchfry.png" alt="ポテトの画像">
             <p>ポテトMサイズ<span>{{ $c_example['poteto'] }}</span>個分の炭水化物</p>
           </div>
-          <div class="poteto example-item example-flex">
+          <div class="cola example-item example-flex">
             <img src="/images/drink_cola_petbottle.png" alt="コーラの画像">
             <p>500mlのコーラ<span>{{ $c_example['cola'] }}</span>本分の炭水化物</p>
           </div>
