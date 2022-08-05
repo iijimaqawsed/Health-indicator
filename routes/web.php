@@ -30,8 +30,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/pfc/{pfc}/result','PfcController@result')->name('pfc.result');
     Route::get('/pfc/{pfc}/delete','PfcController@delete')->name('pfc.delete');
 });
-  Route::get('/user/{user}/mypage','UserController@showMyPage')->name('mypage');
-  Route::get('/users/{user}/edit','Controller@');
-  Route::post('/users/{user}/edit','Controller@');
+  Route::get('/user/mypage','UserController@showMyPage')->name('mypage');
+  Route::post('/user/mypage','UserController@update');
 });
 Auth::routes();

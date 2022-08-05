@@ -38,7 +38,7 @@ class PfcController extends Controller
         list($p_example, $f_example, $c_example) =
         $this->exampleMeasure($p_mass, $f_mass, $c_mass);
 
-        return view('pfc/result',
+        return redirect()->route('pfc.result',
         [
             'pfc' => $pfc,
             'l_b_mass' => $l_b_mass,
@@ -88,7 +88,7 @@ class PfcController extends Controller
 
     public function delete(PfcResult $pfc){
         $pfc->delete();
-        return redirect('/index');
+        return redirect('/');
     }
 
     // 各摂取カロリー、質量の計算メソッド

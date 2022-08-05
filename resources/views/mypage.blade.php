@@ -13,7 +13,7 @@
                 @endforeach
               </div>
             @endif
-            <form action="{{ route('login') }}" method="POST">
+            <form action="{{ route('mypage') }}" method="POST">
               @csrf
               <div class="form-group">
                 <label for="name">ユーザーネーム</label>
@@ -23,24 +23,15 @@
                 <label for="email">メールアドレス</label>
                 <input type="text" class="form-control" id="email" name="email" value="{{ $user->email }}" />
               </div>
-              <div class="form-group">
-                <label for="current-password">現在のパスワード</label>
-                <input type="password" class="form-control" id="password" name="password" value=""/>
-              </div>
-              <div class="form-group">
-                <label for="password">新しいパスワード</label>
-                <input type="password" class="form-control" id="password" name="password" value=""/>
-              </div>
-              <div class="form-group">
-                <label for="password">新しいパスワード（確認用）</label>
-                <input type="password" class="form-control" id="password" name="password" value=""/>
-              </div>
               <div class="text-right">
                 <button type="submit" class="btn btn-primary">ユーザー情報の編集</button>
               </div>
             </form>
           </div>
         </nav>
+        <div class="text-center">
+          <a href="{{ route('password.request') }}">パスワードの変更はこちらから</a>
+        </div>
     </div>
   </div>
 @endsection

@@ -83,6 +83,7 @@ display:none;
   line-height: 32px;
   width: 120px;
   border-radius: 5px;
+  margin-bottom: 30px;
 }
 .b-list-btn button:hover,
 .p-list-btn button:hover {
@@ -95,6 +96,9 @@ display:none;
   }
   .pfc{
     margin-bottom: 50px;
+  }
+  .b-list-btn button, .p-list-btn button {
+    margin: 0px;
   }
 }
 

@@ -43,7 +43,7 @@ class BmiController extends Controller
 
         Auth::user()->bmis()->save($bmi);
 
-        return view('bmi/result', [
+        return redirect()->route('bmi.result', [
             'bmi' => $bmi,
             'weight' => $s_weight,
             'dif_weight' => $difference_weight,
@@ -67,7 +67,7 @@ class BmiController extends Controller
 
     public function delete(BmiResult $bmi){
         $bmi->delete();
-        return redirect('/index');
+        return redirect('/');
     }
 
     public function weightMeasure($height, $weight){

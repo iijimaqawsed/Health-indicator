@@ -135,8 +135,8 @@
               <p class="unit">kg</p>
             </div>
             <div class="result-explanation">
-              <p>この数値が<span>プラス</span>だったら、</p>
-              <p><span>体重オーバー</span>気味って言うこと</p>
+              <p>この数値が<span>プラス</span>ならば、</p>
+              <p><span>体重オーバー</span>気味って言うことです。</p>
             </div>
           </div>
         </div>

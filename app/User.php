@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Mail\ResetPassword;
+use Illuminate\Support\Facades\Mail;
 
 class User extends Authenticatable
 {
@@ -43,5 +45,10 @@ class User extends Authenticatable
 
     public function pfcs() {
         return $this->hasMany('App\PfcResult');
+    }
+
+    public function sendPasswordResetNotification($token)
+    {
+        Mail::to($this)->send(new ResetPassword($token));
     }
 }
