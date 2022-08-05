@@ -45,6 +45,13 @@ p{
   font-size: 30px;
   margin: 20px 0 0 1rem;
 }
+.mass .unit{
+  width: 20px;
+}
+.calorie .unit{
+  width: 60px;
+}
+
 
 /* 　-- 身体測定の結果 --　 */
 .pfc-results .main-title{
@@ -67,6 +74,13 @@ p{
 .body-result .unit{
   font-size: 36px;
 }
+.l-b-mass .unit {
+  width: 45px;
+}
+.day-kcal .unit {
+  width: 70px;
+}
+
 
 /* 　-- PFCについて --　 */
 .sec-title {
@@ -100,30 +114,46 @@ section .example-items .example-flex{
   border: #333 solid 1px;
   background-color: #f3f3b7;
 }
-/* 参考例レイアウト調整 */
 
+/* 参考例レイアウト調整 */
 /* --- たんぱく質欄 --- */
 .ro-suniku.example-item::after{
   content: "";
-  width: 20px;
+  width: 10px;
 }
 .egg.example-item::after{
   content: "";
-  width: 7px;
+  width: 65px;
 }
 .natto.example-item::after{
   content: "";
-  width: 20px;
+  width: 55px;
+}
+.milk.example-item::after{
+  content: "";
+  width: 55px;
+}
+.sake.example-item::after{
+  content: "";
+  width: 25px;
 }
 
 /* --- 脂質欄 --- */
 .oil.example-item::after{
   content: "";
-  width: 12px;
+  width: 57px;
 }
 .butter.example-item::after{
   content: "";
-  width: 38px;
+  width: 75px;
+}
+.baraniku.example-item::after{
+  content: "";
+  width: 50px;
+}
+.tonkatsu.example-item::after{
+  content: "";
+  width: 50px;
 }
 
 /* --- 炭水化物欄 --- */
@@ -131,13 +161,21 @@ section .example-items .example-flex{
   content: "";
   width: 90px;
 }
-.cola.example-item::after{
+.bread.example-item::after{
   content: "";
-  width: 6px;
+  width: 12px;
 }
 .udon.example-item::after{
   content: "";
-  width: 25px;
+  width: 75px;
+}
+.cola.example-item::after{
+  content: "";
+  width: 15px;
+}
+.honey.example-item::after{
+  content: "";
+  width: 50px;
 }
 
 .example-item{
@@ -162,7 +200,8 @@ section .example-items .example-flex{
 
 }
 
-/* ----- 参考例、レスポンシブ ----- */
+
+/* ----- 参考例、２列表示 ----- */
 @media (max-width: 1149px) {
   section .example-items .example-flex{
     width: calc(100%/2);
@@ -171,59 +210,10 @@ section .example-items .example-flex{
   width: 740px;
   }
 
-  /* 各参考例、レイアウト調整 */
-  /* --- たんぱく質欄 --- */
-  .egg.example-item::after{
+  /* --- たんぱく質欄、レイアウト調整 --- */
+  .ro-suniku.example-item::after{
     content: "";
-    width: 60px;
-  }
-  .natto.example-item::after{
-    content: "";
-    width: 40px;
-  }
-  .natto.example-item::after{
-    content: "";
-    width: 35px;
-  }
-  .milk.example-item::after{
-    content: "";
-    width: 35px;
-  }
-  .sake.example-item::after{
-    content: "";
-    width: 20px;
-  }
-
-  /* --- 脂質欄 --- */
-  .oil.example-item::after{
-    content: "";
-    width: 57px;
-  }
-  .butter.example-item::after{
-    content: "";
-    width: 35px;
-  }
-  .tonkatsu.example-item::after{
-    content: "";
-    width: 47px;
-  }
-
-  /* --- 炭水化物欄 --- */
-  .bread.example-item::after{
-    content: "";
-    width: 12px;
-  }
-  .udon.example-item::after{
-    content: "";
-    width: 75px;
-  }
-  .cola.example-item::after{
-    content: "";
-    width: 12px;
-  }
-  .honey.example-item::after{
-    content: "";
-    width: 52px;
+    width: 15px;
   }
 }
 
@@ -240,11 +230,6 @@ section .example-items .example-flex{
   .l-b-mass, .day-kcal, .mass, .calorie{
     margin: 0px auto;
   }
-  .sec-title {
-    display: flex;
-    margin-top: 30px;
-    margin-left: 50px;
-  }
   section .example-items .example-flex{
     width: calc(100%);
   }
@@ -252,15 +237,129 @@ section .example-items .example-flex{
   width: 500px;
   }
 
-  /* 説明画像サイズを下げる */
-  /* .example-item img {
-    width: auto;
-    height: 40px;
-  } */
+  /* 身体結果の文字、大きさを小さくする */
+  .pfc-results .main-title{
+    font-size: 30px;
+  }
+  .body-result h2 {
+    font-size: 24px;
+  }
+  .body-result h3 {
+    font-size: 30px;
+  }
+  .body-result .unit{
+    font-size: 30px;
+  }
+
+  /* 各セクション題名の大きさ縮小 */
+  .sec-title {
+    justify-content: start;
+    margin: 30px auto 0 auto;
+    width: 500px;
+  }
+  .title-img img {
+    height: 70px;
+  }
+  .pfc-results .sec-title h2 {
+    font-size: 24px;
+    background-color: #f4f7f8;
+  }
+
+
+  /* 単位付き出力部中心揃え */
+  .mass .output::before{
+    content: "";
+    width: 20px;
+  }
+  .calorie .output::before{
+    content: "";
+    width: 60px;
+  }
+  .l-b-mass .output::before {
+    content: "";
+    width: 55px;
+  }
+  .day-kcal .output::before {
+    content: "";
+    width: 80px;
+  }
+  /* --- たんぱく質欄、レイアウト調整 --- */
+  .ro-suniku.example-item::after{
+    content: "";
+    width: 30px;
+  }
 }
 
-@media (max-width: 550px) {
+/* ----- セクションの題名、参考例、割合で変化 ----- */
+@media (max-width: 600px) {
+  /* 各セクション題名の大きさ縮小 */
+  .sec-title {
+    justify-content: start;
+    margin: 30px auto 0 auto;
+    width: 80%;
+  }
+
+  /* 参考例の縮小 */
   .example-items {
     width: 80%;
   }
+  .example-item img {
+    height: 45px;
+  }
+}
+
+/* ----- 参考例の画像を非表示にする ----- */
+@media (max-width: 450px) {
+  .example-items {
+    justify-content: start;
+  }
+  .example-item img {
+    display: none;
+  }
+  /* 参考例レイアウト調整 */
+/* --- たんぱく質欄 --- */
+.ro-suniku.example-item::after{
+  content: "";
+  width: 14px;
+}
+.egg.example-item::after{
+  content: "";
+  width: 65px;
+}
+.natto.example-item::after{
+  content: "";
+  width: 48px;
+}
+.milk.example-item::after{
+  content: "";
+  width: 53px;
+}
+.sake.example-item::after{
+  content: "";
+  width: 25px;
+}
+
+/* --- 脂質欄 --- */
+.baraniku.example-item::after{
+  content: "";
+  width: 45px;
+}
+.tonkatsu.example-item::after{
+  content: "";
+  width: 45px;
+}
+
+/* --- 炭水化物欄 --- */
+.rice.example-item::after{
+  content: "";
+  width: 90px;
+}
+.bread.example-item::after{
+  content: "";
+  width: 20px;
+}
+.honey.example-item::after{
+  content: "";
+  width: 53px;
+}
 }
