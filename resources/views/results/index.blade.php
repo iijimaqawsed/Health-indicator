@@ -66,9 +66,5 @@
     </div>
   </div>
 
-  @section('scripts')
-  <script src="/js/script.js">
-  </script>
-  @endsection
 
 @endsection

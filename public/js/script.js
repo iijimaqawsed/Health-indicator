@@ -1,5 +1,12 @@
 'use strict';
-/* BMI表示欄のもっと見るボタンの処理 */
+
+/* ***** ----- ログアウト機能 ----- ***** */
+document.getElementById('logout').addEventListener('click', function(event) {
+  event.preventDefault();
+  document.getElementById('logout-form').submit();
+});
+
+/* ***** ----- BMI表示欄のもっと見るボタンの処理 ----- ***** */
 /* ここには、表示するリストの数を指定します。 */
 var moreNum = 5;
 
@@ -20,7 +27,6 @@ $(function() {
   if (b_list-1 < moreNum) {
     $('.b-list-btn').addClass('is-btn-hidden');
   }
-  console.log(b_list);
 });
 
 /* PFC表示欄のもっと見るボタンの処理 */
@@ -37,7 +43,6 @@ $(function() {
   var p_list = $(".table .p-list-item").length;
     if (p_list-1 < moreNum) {
       $('.p-list-btn').addClass('is-btn-hidden');
-      console.log(p_list);
   }
 });
 
@@ -47,3 +52,14 @@ $( '.delete' ).on( 'click',function(event) {
 } else{
   event.preventDefault();
 } });
+
+/* ***** ----- ハンバーガーメニュー -----*****  */
+$(".openbtn1").click(function () {//ボタンがクリックされたら
+  $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
+    $("#g-nav").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+});
+
+$("#g-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
+    $(".openbtn1").removeClass('active');//ボタンの activeクラスを除去し
+    $("#g-nav").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
+});
