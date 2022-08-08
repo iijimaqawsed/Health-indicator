@@ -203,6 +203,11 @@ display:none;
   color: #ecae52;
 }
 
+/* --- 削除実行後、ajaxから非表示にする --- */
+.result-hidden{
+  display: none;
+}
+
 @media (max-width: 991px) {
   .bmi {
     margin-bottom: 50px;

@@ -19,13 +19,13 @@
             </thead>
             <tbody>
             @foreach($bmis as $bmi)
-            <tr class="b-list-item">
+            <tr class="b-list-item" data-bmi-id="{{ $bmi->id }}">
                 <td><a href="{{ route('bmi.result', ['bmi' => $bmi->id]) }}" class="bmi-result-item">{{ $bmi->formatted_created_date }}</a></td>
                 <td>{{ $bmi->result }}</td>
                 <td>
                   <span class="label {{ $bmi->score_class }}">{{ $bmi->score_label }}</span>
                 </td>
-                <td><a class="delete" href="{{ route('bmi.delete', ['bmi' => $bmi->id]) }}">削除</a></td>
+                <td><a class="delete" href="#">削除</a></td>
               </tr>
             @endforeach
             </tbody>

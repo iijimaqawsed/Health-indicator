@@ -49,13 +49,27 @@ $(function() {
 /* ***** ----- 削除機能 -----*****  */
 $( '.delete' ).on( 'click',function(event) {
   if(confirm('本当に削除しますか？')) {
+    var element = $(this).parent().parent();
+    var id = element.data('bmi-id');
+    console.log(id);
+    //ajax処理スタート
+    $.ajax({
+      headers: {
+        'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
+      },
+      url: '/bmi/' + id + '/delete',
+      method: 'GET',
+      id: id,
+      success: function(){
+        element.addClass('result-hidden');
+      },
+      error: function(){
+        //通信が失敗した場合の処理
+      }
+    });
 } else{
   event.preventDefault();
 } });
-
-
-/* ***** ----- 削除機能のajax -----*****  */
-
 
 /* ***** ----- ハンバーガーメニュー -----*****  */
 $(".openbtn1").click(function () {//ボタンがクリックされたら
