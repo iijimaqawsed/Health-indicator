@@ -29,7 +29,7 @@ header .my-navbar {
   border: #333 solid 1px;
   padding: 5px 15px;
 }
-p{
+.example-items p{
   font-size: 16px;
 }
 .mass, .calorie{
@@ -40,6 +40,7 @@ p{
 .output{
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .unit{
   font-size: 30px;
@@ -65,7 +66,7 @@ p{
   margin-top: 20px;
 }
 .body-result h3 {
-  width: 120px;
+  width: 140px;
   font-size: 36px;
 }
 .l-b-mass, .day-kcal{
@@ -159,23 +160,23 @@ section .example-items .example-flex{
 /* --- 炭水化物欄 --- */
 .rice.example-item::after{
   content: "";
-  width: 90px;
+  width: 80px;
 }
 .bread.example-item::after{
   content: "";
-  width: 12px;
+  /* width: 12px; */
 }
 .udon.example-item::after{
   content: "";
-  width: 75px;
+  width: 62px;
 }
 .cola.example-item::after{
   content: "";
-  width: 15px;
+  /* width: 15px; */
 }
 .honey.example-item::after{
   content: "";
-  width: 50px;
+  width: 37px;
 }
 
 .example-item{
@@ -316,11 +317,16 @@ section .example-items .example-flex{
   .example-item img {
     display: none;
   }
+  .example-item span{
+    font-size: 20px;
+    font-weight: 700;
+  }
+
   /* 参考例レイアウト調整 */
 /* --- たんぱく質欄 --- */
 .ro-suniku.example-item::after{
   content: "";
-  width: 14px;
+  width: 20px;
 }
 .egg.example-item::after{
   content: "";
@@ -332,7 +338,7 @@ section .example-items .example-flex{
 }
 .milk.example-item::after{
   content: "";
-  width: 53px;
+  width: 57px;
 }
 .sake.example-item::after{
   content: "";
@@ -352,14 +358,14 @@ section .example-items .example-flex{
 /* --- 炭水化物欄 --- */
 .rice.example-item::after{
   content: "";
-  width: 90px;
+  width: 75px;
 }
 .bread.example-item::after{
   content: "";
-  width: 20px;
+  width: 10px;
 }
 .honey.example-item::after{
   content: "";
-  width: 53px;
+  width: 40px;
 }
 }

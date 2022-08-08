@@ -5,8 +5,6 @@ header .my-navbar {
 .bmi-results{
   max-width: 1440px;
   margin: 0 auto;
-  /* display: flex; */
-  /* justify-content: center; */
   box-sizing: border-box;
 }
 .flex-items{
@@ -161,15 +159,19 @@ p{
 .output{
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .weight-items .output::before{
   content: "";
   width: 55px;
 }
+.weight-items h3{
+  height: 56px;
+}
 .unit{
   font-size: 40px;
-  width: 45px;
-  margin: 28px 0 20px 1rem;
+  height: 56px;
+  margin-left: 1rem;
   padding: 5px 0px;
 }
 .result-contents .btn {

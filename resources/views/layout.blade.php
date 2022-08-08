@@ -4,11 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- ajax処理用 -->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>helth indicator</title>
   @yield('styles')
   <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="/images/iphone_favicon.png" sizes="180x180">
   <link rel="icon" type="image/png" href="/images/android_favicon.png" sizes="192x192">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootflat/2.0.4/css/bootflat.min.css">
   <link rel="stylesheet" href="/css/styles.css">
@@ -29,7 +33,7 @@
             <li><a href="{{ route('mypage', ['user' => Auth::user()->id]) }}">マイページ</a></li>
             <li><a href="#" id="logout">ログアウト</a></li>
             <li><a href="/bmi/measure">BMI計測開始</a></li>
-            <li><a href="/pfc/measure">PFCバランス計測開始</a></li>
+            <li><a href="/pfc/measure">PFC計測開始</a></li>
           </ul>
         </div>
       </nav>

@@ -46,12 +46,16 @@ $(function() {
   }
 });
 
-// 削除機能のconfirm実装
+/* ***** ----- 削除機能 -----*****  */
 $( '.delete' ).on( 'click',function(event) {
   if(confirm('本当に削除しますか？')) {
 } else{
   event.preventDefault();
 } });
+
+
+/* ***** ----- 削除機能のajax -----*****  */
+
 
 /* ***** ----- ハンバーガーメニュー -----*****  */
 $(".openbtn1").click(function () {//ボタンがクリックされたら
