@@ -169,6 +169,7 @@ opacity: 0;
 .pfc .table th:last-child {
   width: 10%;
 }
+
 /* --- もっと見るボタン --- */
 .b-list-item, .p-list-item {
   opacity: 1;
@@ -203,7 +204,7 @@ display:none;
   color: #ecae52;
 }
 
-/* --- 削除実行後、ajaxから非表示にする --- */
+/* --- 削除実行後、ajaxから要素を非表示にする --- */
 .result-hidden{
   display: none;
 }

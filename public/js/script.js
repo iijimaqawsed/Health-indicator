@@ -1,12 +1,12 @@
 'use strict';
 
-/* ***** ----- ログアウト機能 ----- ***** */
+/* ===== ログアウト機能 ===== */
 document.getElementById('logout').addEventListener('click', function(event) {
   event.preventDefault();
   document.getElementById('logout-form').submit();
 });
 
-/* ***** ----- BMI表示欄のもっと見るボタンの処理 ----- ***** */
+/* ===== BMI表示欄のもっと見るボタンの処理 ===== */
 /* ここには、表示するリストの数を指定します。 */
 var moreNum = 5;
 
@@ -46,18 +46,33 @@ $(function() {
   }
 });
 
-/* ***** ----- 削除機能 -----*****  */
+/* ===== 削除機能 =====  */
 $( '.delete' ).on( 'click',function(event) {
   if(confirm('本当に削除しますか？')) {
+
+    // 削除ボタンの親要素trを取得
     var element = $(this).parent().parent();
-    var id = element.data('bmi-id');
+    // クラス名の取得
+    var ele_class = element.attr('class');
+
+    // 取得した親要素のクラス名によって変数に入れる値を変える
+    if(ele_class === 'b-list-item'){
+      // ajaxでアクセスするURL(ルーティングの削除メソッド)に使う部品の生成
+      var id = element.data('bmi-id');
+      var target = '/bmi/';
+    } else if(ele_class === 'p-list-item') {
+      var id = element.data('pfc-id');
+      var target = '/pfc/';
+    }
+    console.log(target);
     console.log(id);
+
     //ajax処理スタート
     $.ajax({
       headers: {
         'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
       },
-      url: '/bmi/' + id + '/delete',
+      url: target + id + '/delete',
       method: 'GET',
       id: id,
       success: function(){
@@ -67,11 +82,15 @@ $( '.delete' ).on( 'click',function(event) {
         //通信が失敗した場合の処理
       }
     });
+
+    // aタグによるURLの変更（＃）、画面上部に移動動作をキャンセル
+    return false;
+
 } else{
   event.preventDefault();
 } });
 
-/* ***** ----- ハンバーガーメニュー -----*****  */
+/* ===== ハンバーガーメニュー =====  */
 $(".openbtn1").click(function () {//ボタンがクリックされたら
   $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
     $("#g-nav").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与

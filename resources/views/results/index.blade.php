@@ -50,10 +50,10 @@
             </thead>
             <tbody>
             @foreach($pfcs as $pfc)
-            <tr class="p-list-item">
+            <tr class="p-list-item"  data-pfc-id="{{ $pfc->id }}">
                 <td><a href="{{ route('pfc.result', ['pfc' => $pfc->id]) }}" class="pfc-result-item">{{ $pfc->formatted_created_date }}</a></td>
                 <td>{{ $pfc->l_b_mass }}kg</td>
-                <td><a class="delete" href="{{ route('pfc.delete', ['pfc' => $pfc->id]) }}">削除</a></td>
+                <td><a class="delete" href="#">削除</a></td>
               </tr>
             @endforeach
             </tbody>
