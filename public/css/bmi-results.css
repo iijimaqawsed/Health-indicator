@@ -68,6 +68,8 @@ p{
   display:none;
 }
 .message{
+  display: flex;
+  align-items: center;
   height: 110px;
   padding: 5px 15px;
   margin: 20px 0 0 0;
