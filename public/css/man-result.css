@@ -1,0 +1,12 @@
+/* 男性用BMI結果画面の装飾 */
+.bmi-results h2 {
+  background-color: rgb(188, 238, 238);
+}
+
+/* 男性用PFC結果画面の装飾 */
+.pfc-results h2:not(.pfc-results .main-title, .sec-title h2){
+  background-color: rgb(188, 238, 238);
+}
+.example-item span{
+  color: rgb(80, 80, 255);
+}

@@ -1,0 +1,278 @@
+body {
+  background-color: #f4f7f8;
+}
+
+.navbar {
+  margin: 2rem 0 2.5rem 0;
+}
+
+.my-navbar {
+  align-items: center;
+  background: #333;
+  display: flex;
+  height: 6rem;
+  justify-content: space-between;
+  padding: 0 2%;
+  margin-bottom: 3rem;
+}
+
+.my-navbar-brand {
+  font-size: 18px;
+}
+
+.my-navbar-brand,
+.my-navbar-item {
+  color: #ffffff;
+}
+.my-navbar-control {
+  margin-right: 50px;
+}
+
+.my-navbar-brand:hover,
+a.my-navbar-item:hover {
+  color: #ecae52;
+}
+
+.table td:nth-child(2),
+.table td:nth-child(3),
+.table td:nth-child(4) {
+  white-space: nowrap;
+  width: 1px;
+}
+
+.form-control[disabled],
+.form-control[readonly] {
+  background-color: #fff;
+}
+
+/* ＊＊＊＊＊ ハンバーガーメニューボタン ＊＊＊＊＊ */
+#g-nav{
+  /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+  position:fixed;
+  z-index: 999;
+  /*ナビのスタート位置と形状*/
+top:-120%;
+  right:0;
+width:30%;
+  height: 50vh;/*ナビの高さ*/
+background:rgba(243, 243, 183, 0.9);
+  /*動き*/
+transition: all 0.6s;
+}
+
+/*アクティブクラスがついたら位置を0に*/
+#g-nav.panelactive{
+  top: 0;
+}
+
+/*ナビゲーションの縦スクロール*/
+#g-nav.panelactive #g-nav-list{
+  /*ナビの数が増えた場合縦スクロール*/
+  position: fixed;
+  z-index: 999;
+  width: 30%;
+  height: 100vh;/*表示する高さ*/
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/*ナビゲーション*/
+#g-nav ul {
+  /*ナビゲーション天地中央揃え*/
+  position: absolute;
+  z-index: 999;
+  top:20%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+/*リストのレイアウト設定*/
+
+#g-nav li{
+list-style: none;
+  text-align: center;
+}
+
+#g-nav li a{
+color: #333;
+text-decoration: none;
+padding:10px;
+display: block;
+text-transform: uppercase;
+letter-spacing: 0.1em;
+font-weight: bold;
+}
+
+/*========= ボタンのためのCSS ===============*/
+.openbtn1{
+position:fixed;
+  z-index: 9999;/*ボタンを最前面に*/
+top:10px;
+right: 10px;
+cursor: pointer;
+  width: 50px;
+  height:50px;
+}
+
+/*×に変化*/
+.openbtn1 span{
+  display: inline-block;
+  transition: all .4s;
+  position: absolute;
+  left: 14px;
+  height: 3px;
+  border-radius: 2px;
+background-color: #666;
+  width: 45%;
+}
+
+.openbtn1 span:nth-of-type(1) {
+top:15px;
+}
+
+.openbtn1 span:nth-of-type(2) {
+top:23px;
+}
+
+.openbtn1 span:nth-of-type(3) {
+top:31px;
+}
+
+.openbtn1.active span:nth-of-type(1) {
+  top: 18px;
+  left: 18px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 30%;
+}
+
+.openbtn1.active span:nth-of-type(2) {
+opacity: 0;
+}
+
+.openbtn1.active span:nth-of-type(3){
+  top: 30px;
+  left: 18px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 30%;
+}
+
+/* ＊＊＊＊＊ 結果一覧画面 ＊＊＊＊＊ */
+.bmi .table th:first-child {
+  width: 60%;
+}
+.bmi .table th:last-child {
+  width: 5%;
+}
+.pfc .table th:first-child {
+  width: 70%;
+}
+.pfc .table th:last-child {
+  width: 10%;
+}
+
+/* --- もっと見るボタン --- */
+.b-list-item, .p-list-item {
+  opacity: 1;
+}
+.b-list-item.is-hidden, .p-list-item.is-hidden {
+  opacity: 0;
+  height: 0;
+  margin: 0;
+  display:none;
+}
+.b-list-btn, .p-list-btn {
+  margin-top: 20px;
+}
+.b-list-btn.is-btn-hidden, .p-list-btn.is-btn-hidden {
+display:none;
+}
+.b-list-btn button, .p-list-btn button {
+  background-color: #333;
+  color:#fff;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  height: 32px;
+  line-height: 32px;
+  width: 120px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+.b-list-btn button:hover,
+.p-list-btn button:hover {
+  color: #ecae52;
+}
+
+/* --- 削除実行後、ajaxから要素を非表示にする --- */
+.result-hidden{
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .bmi {
+    margin-bottom: 50px;
+  }
+  .pfc{
+    margin-bottom: 50px;
+  }
+  .b-list-btn button, .p-list-btn button {
+    margin: 0px;
+  }
+}
+
+/* メニュー展開レスポンシブ */
+@media (max-width: 767px) {
+  #g-nav{
+  top:-120%;
+    right:0;
+  width:50%;
+    height: 50vh;/*ナビの高さ*/
+  }
+  #g-nav.panelactive #g-nav-list{
+    width: 70%;
+  }
+
+  #g-nav ul {
+    /*ナビゲーション天地中央揃え*/
+    top:20%;
+    left:35%;
+  }
+}
+
+/* ＊＊＊＊＊ BMI入力画面 ＊＊＊＊＊ */
+.bmi_mesure_form .col-md-10{
+  padding-right: 0px;
+}
+.bmi_mesure_form .unit{
+  font-size: 20px;
+}
+
+
+/* ＊＊＊＊＊ PFC入力画面 ＊＊＊＊＊ */
+.pfc_mesure_form .col-md-10{
+  padding-right: 0px;
+}
+.pfc_mesure_form .unit{
+  font-size: 20px;
+}
+.pfc_mesure_form .confirm{
+  text-align: left;
+}
+
+/* ＊＊＊＊＊ エラー画面 ＊＊＊＊＊ */
+.error .error-img img{
+  height: 300px;
+  width: auto;
+}
+.error .icon {
+  display: flex;
+  justify-content: center;
+}
+.error .icon img{
+  height: 30px;
+  width: auto;
+}
+.error p{
+  font-size: 24px;
+}

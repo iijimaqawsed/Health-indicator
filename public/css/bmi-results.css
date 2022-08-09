@@ -1,0 +1,210 @@
+/* ＊＊＊＊＊ BMI結果画面 ＊＊＊＊＊ */
+header .my-navbar {
+  margin-bottom: 0px;
+}
+.bmi-results{
+  max-width: 1440px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.flex-items{
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-evenly;
+}
+.result-contents{
+  text-align: center;
+}
+.bmi-results h2 {
+  font-size: 30px;
+  margin: 50px 0 0 0 ;
+  font-weight: 500;
+}
+.bmi-results h3 {
+  font-size: 40px;
+  margin: 20px 0;
+  display: inline-block;
+  background-color: #fff;
+  border: #333 solid 1px;
+  padding: 5px 15px;
+}
+.result-explanation{
+  border: #333 solid 1px;
+  background-color: rgb(240, 240, 240);
+}
+p{
+  font-size: 16px;
+  line-height: 30px;
+}
+
+/* 　-- 上部の結果表 --　 */
+.bmi-result{
+  display: inline-block;
+}
+.bmi-results .main-title{
+  font-size: 36px;
+  font-weight: 700;
+  display: inline-block;
+  margin-top: 30px;
+
+}
+.bmi-result h3{
+  width: auto;
+  font-size: 50px;
+  padding: 10px;
+  margin: 20px 0 0 0 ;
+}
+.bmi-result .result-explanation{
+  width: 550px;
+  margin-top: 25px;
+}
+
+/* 　-- BMIの評価 --　 */
+.score-item img{
+  height: 200px;
+  width: auto;
+}
+.message::-webkit-scrollbar {
+  display:none;
+}
+.message{
+  height: 110px;
+  padding: 5px 15px;
+  margin: 20px 0 0 0;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: #f4f7f8;
+  font-family: sans-serif;
+  border: #333 solid 3px;
+}
+/* スコアに対する変化装飾 */
+.blue{
+  border: rgb(101, 101, 255) solid 3px;
+  background-color: rgb(214, 232, 255);
+  border-radius: 0%;
+}
+.green{
+  border: rgb(102, 245, 102) solid 3px;
+  background-color: rgb(214, 255, 217);
+  border-radius: 0%;
+}
+.yellow{
+  border: yellow solid 3px;
+  background-color: rgb(240, 246, 185);
+  border-radius: 0%;
+}
+.red{
+  border: rgb(255, 137, 137) solid 3px;
+  background-color: rgb(255, 214, 214);
+  border-radius: 0%;
+}
+
+/* 　-- BMIのスコア基準の説明欄 --　 */
+.explanation-items {
+  width: 200px;
+  margin: 20px 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.score-explanation .explanation-item {
+  width: 150px;
+}
+.score-explanation .explanation-item:nth-child(n+3) {
+  margin-top: 43px;
+}
+.score-explanation img {
+  width: auto;
+  height: 120px;
+  flex-wrap: wrap;
+}
+.score-explanation p{
+  font-size: 16px;
+  margin: 0px;
+}
+.score-item, .explanation-items,
+.sta-weight-items, .dif_weight-items {
+  width: 350px;
+}
+.result-explanation span{
+  color: red;
+}
+.skinny p{
+  border: #333 solid 1px;
+  background-color: rgb(224, 224, 249);
+}
+.standard p{
+  border: #333 solid 1px;
+  background-color: rgb(225, 249, 224);
+}
+.obese p{
+  border: #333 solid 1px;
+  background-color: rgb(247, 249, 224);
+}
+.obesity p{
+  border: #333 solid 1px;
+  background-color: rgb(249, 224, 224);
+}
+.result-explanation p{
+  margin: 0px;
+}
+.weight-items{
+  margin-bottom: 30px;
+}
+
+/* 画面下部、体重について */
+/* 出力値と単位を分ける */
+.output{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.weight-items .output::before{
+  content: "";
+  width: 55px;
+}
+.weight-items h3{
+  height: 56px;
+}
+.unit{
+  font-size: 40px;
+  height: 56px;
+  margin-left: 1rem;
+  padding: 5px 0px;
+}
+.result-contents .btn {
+  margin: 30px 0 50px 0;
+}
+
+/* ----- スマートフォン向けCSS ----- */
+@media (max-width: 767px) {
+  .flex-items{
+    display: block;
+  }
+  .bmi-results .main-title{
+    font-size: 30px;
+  }
+  .bmi-results h2 {
+    width: 350px;
+    display: inline-block;
+    margin-top: 30px;
+  }
+  .score-item, .explanation-items, .sta-weight-items, .dif_weight-items{
+    margin: 20px auto 0px auto;
+  }
+  .bmi-result h3{
+    font-size: 45px;
+    width: 175px;
+    padding: 5px 10px;
+  }
+}
+
+/* ----- 上部のBMI説明欄の縮小 ----- */
+@media (max-width: 599px){
+  .bmi-result .result-explanation{
+    width: 350px;
+    margin-top: 25px;
+  }
+}
