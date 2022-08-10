@@ -9,9 +9,9 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>helth indicator</title>
   @yield('styles')
-  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="./images/apple-touch-icon.png" sizes="180x180">
-  <link rel="icon" type="image/png" href="./images/android-touch-icon.png" sizes="192x192">
+  <link rel="shortcut icon" href="data:/images/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="data:/images/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" type="image/png" href="data:/images/android-touch-icon.png" sizes="192x192">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootflat/2.0.4/css/bootflat.min.css">
