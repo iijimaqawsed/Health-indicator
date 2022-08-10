@@ -58,7 +58,7 @@ class RegisterController extends Controller
         ],[
             'gender.in' => ':attribute 記入欄はプルダウンメニューから入力してください。',
         ],[
-            'name' => '名前',
+            'name' => 'ユーザー名',
             'email' => 'メールアドレス',
             'password' => 'パスワード',
             'gender' => '性別',

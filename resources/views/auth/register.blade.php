@@ -25,11 +25,11 @@
                 <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" />
               </div>
               <div class="form-group">
-                <label for="gender" id="gender">性別</label><br>
-                <select name="gender">
+                <label for="gender">性別</label><br>
+                <select id="gender" name="gender">
                   <option value="">性別を選択してください</option>
-                  <option value="0">男性</option>
-                  <option value="1">女性</option>
+                  <option value="0" @if(old('gender') == '0') selected @endif>男性</option>
+                  <option value="1" @if(old('gender') == '1') selected @endif>女性</option>
                 </select>
               </div>
               <!-- <input type="text" name="gender" class="form-group"> -->
