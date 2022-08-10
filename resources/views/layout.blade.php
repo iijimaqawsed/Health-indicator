@@ -10,8 +10,8 @@
   <title>helth indicator</title>
   @yield('styles')
   <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="/images/iphone_favicon.png" sizes="180x180">
-  <link rel="icon" type="image/png" href="/images/android_favicon.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" type="image/png" href="/images/android-touch-icon.png" sizes="192x192">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootflat/2.0.4/css/bootflat.min.css">
@@ -22,7 +22,7 @@
 <body>
 <header>
   <nav class="my-navbar">
-    <a class="my-navbar-brand" href="/">helth Indicator</a>
+    <a class="my-navbar-brand" href="/">helth indicator</a>
 
     <div class="my-navbar-control">
       @if(Auth::check())
