@@ -311,61 +311,86 @@ section .example-items .example-flex{
 
 /* ----- 参考例の画像を非表示にする ----- */
 @media (max-width: 450px) {
+  .pfc-results .main-title{
+    font-size: 24px;
+  }
   .example-items {
     justify-content: start;
   }
   .example-item img {
     display: none;
   }
-  .example-item span{
-    font-size: 20px;
-    font-weight: 700;
-  }
 
   /* 参考例レイアウト調整 */
-/* --- たんぱく質欄 --- */
-.ro-suniku.example-item::after{
-  content: "";
-  width: 20px;
-}
-.egg.example-item::after{
-  content: "";
-  width: 65px;
-}
-.natto.example-item::after{
-  content: "";
-  width: 48px;
-}
-.milk.example-item::after{
-  content: "";
-  width: 57px;
-}
-.sake.example-item::after{
-  content: "";
-  width: 25px;
-}
+  section .example-items .example-flex{
+    justify-content: start;
+  }
+  .example-item span{
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .example-items p{
+    font-size: 14px;
+  }
+  /* --- たんぱく質欄 --- */
+  .ro-suniku.example-item::after{
+    content: "";
+    width: 0px;
+  }
+  .egg.example-item::after{
+    content: "";
+    width: 0px;
+  }
+  .natto.example-item::after{
+    content: "";
+    width: 0px;
+  }
+  .milk.example-item::after{
+    content: "";
+    width: 0px;
+  }
+  .sake.example-item::after{
+    content: "";
+    width: 0px;
+  }
 
-/* --- 脂質欄 --- */
-.baraniku.example-item::after{
-  content: "";
-  width: 45px;
-}
-.tonkatsu.example-item::after{
-  content: "";
-  width: 45px;
-}
+  /* --- 脂質欄 --- */
+  .oil.example-item::after{
+    content: "";
+    width: 0px;
+  }
+  .butter.example-item::after{
+    content: "";
+    width: 0px;
+  }
+  .baraniku.example-item::after{
+    content: "";
+    width: 0px;
+  }
+  .tonkatsu.example-item::after{
+    content: "";
+    width: 0px;
+  }
 
-/* --- 炭水化物欄 --- */
-.rice.example-item::after{
-  content: "";
-  width: 75px;
-}
-.bread.example-item::after{
-  content: "";
-  width: 10px;
-}
-.honey.example-item::after{
-  content: "";
-  width: 40px;
-}
+  /* --- 炭水化物欄 --- */
+  .rice.example-item::after{
+    content: "";
+    width: 0px;
+  }
+  .bread.example-item::after{
+    content: "";
+    width: 0px;
+  }
+  .udon.example-item::after{
+    content: "";
+    width: 0px;
+  }
+  .cola.example-item::after{
+    content: "";
+    width: 0px;
+  }
+  .honey.example-item::after{
+    content: "";
+    width: 0px;
+  }
 }
