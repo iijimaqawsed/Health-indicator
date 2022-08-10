@@ -1,11 +1,5 @@
 'use strict';
 
-/* ===== ログアウト機能 ===== */
-document.getElementById('logout').addEventListener('click', function(event) {
-  event.preventDefault();
-  document.getElementById('logout-form').submit();
-});
-
 /* ===== BMI表示欄のもっと見るボタンの処理 ===== */
 /* ここには、表示するリストの数を指定します。 */
 var moreNum = 5;
