@@ -13,8 +13,11 @@ class UserController extends Controller
     }
 
     public function update(Request $request) {
-        $request->validate([
+        $this->validate($request,[
             'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'max:255'],
+        ],[],[
+            'name' => 'ユーザー名',
         ]);
 
         $user = Auth::user();

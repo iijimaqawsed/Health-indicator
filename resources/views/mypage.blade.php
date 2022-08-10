@@ -16,7 +16,7 @@
             <form action="{{ route('mypage') }}" method="POST">
               @csrf
               <div class="form-group">
-                <label for="name">ユーザーネーム</label>
+                <label for="name">ユーザー名</label>
                 <input type="text" class="form-control" id="name" name="name" value="{{ $user->name }}" />
               </div>
               <div class="form-group">
