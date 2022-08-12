@@ -52,14 +52,12 @@ $( '.delete' ).on( 'click',function(event) {
     // 取得した親要素のクラス名によって変数に入れる値を変える
     if(ele_class === 'b-list-item'){
       // ajaxでアクセスするURL(ルーティングの削除メソッド)に使う部品の生成
-      var id = element.data('bmi-id');
       var target = '/bmi/';
+      var id = element.data('bmi-id');
     } else if(ele_class === 'p-list-item') {
-      var id = element.data('pfc-id');
       var target = '/pfc/';
+      var id = element.data('pfc-id');
     }
-    console.log(target);
-    console.log(id);
 
     //ajax処理スタート
     $.ajax({
@@ -68,12 +66,8 @@ $( '.delete' ).on( 'click',function(event) {
       },
       url: target + id + '/delete',
       method: 'GET',
-      id: id,
       success: function(){
         element.addClass('result-hidden');
-      },
-      error: function(){
-        //通信が失敗した場合の処理
       }
     });
 
