@@ -22,7 +22,8 @@
 <body>
 <header>
   <nav class="my-navbar">
-    <a class="my-navbar-brand" href="/">helth indicator</a>
+    <a class="my-navbar-brand" href="/">
+      <img class="logo" src="/images/logo.png" alt="ロゴ"></a>
 
     <div class="my-navbar-control">
       @if(Auth::check())

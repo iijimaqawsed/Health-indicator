@@ -19,10 +19,10 @@
               <div class="form-group">
                 <label for="height">身長</label>
                 <div class="row">
-                  <div class="col col-md-10">
+                  <div class="col col-xs-10">
                     <input type="text" class="form-control" name="height" id="height" value="{{ old('height') }}" placeholder="165" />
                   </div>
-                  <div class="col col-md-2">
+                  <div class="col col-xs-2">
                     <p class="unit">cm</p>
                   </div>
                 </div>
@@ -30,10 +30,10 @@
               <div class="form-group">
                 <label for="weight">体重</label>
                 <div class="row">
-                  <div class="col col-md-10">
+                  <div class="col col-xs-10">
                     <input type="text" class="form-control" name="weight" id="weight" value="{{ old('weight') }}" placeholder="60" />
                   </div>
-                  <div class="col col-md-2">
+                  <div class="col col-xs-2">
                     <p class="unit">kg</p>
                   </div>
                 </div>
