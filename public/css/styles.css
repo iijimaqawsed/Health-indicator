@@ -8,12 +8,17 @@ body {
 
 .my-navbar {
   align-items: center;
-  background: #333;
+  background-color: #333;
   display: flex;
   height: 6rem;
   justify-content: space-between;
   padding: 0 2%;
   margin-bottom: 3rem;
+}
+
+.logo{
+  height: 40px;
+  width: auto;
 }
 
 .my-navbar-brand {
@@ -22,10 +27,14 @@ body {
 
 .my-navbar-brand,
 .my-navbar-item {
-  color: #ffffff;
+  color: #fff;
 }
 .my-navbar-control {
   margin-right: 50px;
+}
+
+.my-navbar-brand:hover{
+  opacity: 0.5;
 }
 
 .my-navbar-brand:hover,
@@ -240,8 +249,15 @@ display:none;
   }
 }
 
+@media (max-width: 450px) {
+  .logo{
+    height: 30px;
+    width: auto;
+  }
+}
+
 /* ＊＊＊＊＊ BMI入力画面 ＊＊＊＊＊ */
-.bmi_mesure_form .col-md-10{
+.bmi_mesure_form .col-xs-10{
   padding-right: 0px;
 }
 .bmi_mesure_form .unit{
@@ -250,7 +266,7 @@ display:none;
 
 
 /* ＊＊＊＊＊ PFC入力画面 ＊＊＊＊＊ */
-.pfc_mesure_form .col-md-10{
+.pfc_mesure_form .col-xs-10{
   padding-right: 0px;
 }
 .pfc_mesure_form .unit{

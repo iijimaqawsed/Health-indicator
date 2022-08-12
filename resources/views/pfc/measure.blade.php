@@ -19,10 +19,10 @@
               <div class="form-group">
                 <label for="weight">体重</label>
                 <div class="row">
-                  <div class="col col-md-10">
+                  <div class="col col-xs-10">
                     <input type="text" class="form-control" name="weight" id="weight" value="{{ old('weight') }}" placeholder="60" />
                   </div>
-                  <div class="col col-md-2">
+                  <div class="col col-xs-2">
                     <div class="text-left">
                       <p class="unit">kg</p>
                     </div>
@@ -32,10 +32,10 @@
               <div class="form-group">
                 <label for="body_fat">体脂肪率</label>
                 <div class="row">
-                  <div class="col col-md-10">
+                  <div class="col col-xs-10">
                     <input type="text" class="form-control" name="body_fat" id="body_fat" value="{{ old('body_fat') }}" placeholder="25" />
                   </div>
-                  <div class="col col-md-2">
+                  <div class="col col-xs-2">
                     <p class="unit">%</p>
                   </div>
                 </div>
