@@ -8,14 +8,14 @@ use App\User;
 
 class UserController extends Controller
 {
-    public function showMyPage() {
+    public function showMyPage(User $user) {
         return view('mypage', ['user' => Auth::user()]);
     }
 
-    public function update(Request $request) {
+    public function update(User $user, Request $request) {
         $this->validate($request,[
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255'],
         ],[],[
             'name' => 'ユーザー名',
         ]);
