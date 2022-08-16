@@ -1,6 +1,6 @@
 'use strict';
 
-/* ===== BMI表示欄のもっと見るボタンの処理 ===== */
+/* ===== 過去の結果表示欄のもっと見るボタンの処理 ===== */
 /* ここには、表示するリストの数を指定します。 */
 var moreNum = 5;
 
@@ -74,17 +74,26 @@ $( '.delete' ).on( 'click',function(event) {
     // aタグによるURLの変更（＃）、画面上部に移動動作をキャンセル
     return false;
 
-} else{
-  event.preventDefault();
+  } else{
+    event.preventDefault();
 } });
 
 /* ===== ハンバーガーメニュー =====  */
 $(".openbtn1").click(function () {//ボタンがクリックされたら
   $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
     $("#g-nav").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+    $("#fadeLayer").toggleClass('active');//画面を暗くする要素にpanelactiveクラスを付与
+
+  // 縦にスクロールさせるときの最大画面幅の取得
+  let target = $("#fadeLayer");
+  let MaxHeight = Math.max(
+    Math.max($("body").innerHeight(), $("body").get(0).scrollHeight),
+    Math.max($("html").innerHeight(), $("html").get(0).scrollHeight));
+  target.css('height', MaxHeight);
 });
 
 $("#g-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
     $(".openbtn1").removeClass('active');//ボタンの activeクラスを除去し
     $("#g-nav").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
+    $("#fadeLayer").removeClass('active');//画面を暗くする要素にpanelactiveクラスを付与
 });
