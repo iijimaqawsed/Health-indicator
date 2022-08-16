@@ -165,6 +165,26 @@ opacity: 0;
   width: 30%;
 }
 
+/* --- 画面を暗くする要素（デフォルト非表示） --- */
+#fadeLayer {
+  position:absolute;
+  top:0px;
+  left:0px;
+
+  width:100%;
+  height:100%;
+
+  background-color:#333;
+  opacity:0.5;
+  visibility: hidden;
+  z-index:1;
+}
+
+/* activeが付与されたら画面を暗くする（表示する） */
+#fadeLayer.active {
+  visibility: visible;
+}
+
 /* ＊＊＊＊＊ 結果一覧画面 ＊＊＊＊＊ */
 .bmi .table th:first-child {
   width: 60%;

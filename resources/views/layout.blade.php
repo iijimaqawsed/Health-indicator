@@ -52,6 +52,9 @@
 <main>
   @yield('content')
 </main>
+
+<!-- ハンバーガーメニュー展開時に画面を暗くする要素 -->
+<div id="fadeLayer"></div>
 @if(Auth::check())
   <script>
     document.getElementById('logout').addEventListener('click', function(event) {
