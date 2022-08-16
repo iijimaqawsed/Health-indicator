@@ -13,7 +13,7 @@
                 @endforeach
               </div>
             @endif
-            <form action="{{ route('mypage') }}" method="POST">
+            <form action="{{ route('mypage', ['user' => Auth::user()->id]) }}" method="POST">
               @csrf
               <div class="form-group">
                 <label for="name">ユーザー名</label>
