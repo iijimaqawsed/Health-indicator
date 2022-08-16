@@ -29,8 +29,10 @@ Route::group(['middleware' => 'auth'], function(){
   Route::group(['middleware' => 'can:view,pfc'], function(){
     Route::get('/pfc/{pfc}/result','PfcController@result')->name('pfc.result');
     Route::get('/pfc/{pfc}/delete','PfcController@delete')->name('pfc.delete');
-});
-  Route::get('/user/mypage','UserController@showMyPage')->name('mypage');
-  Route::post('/user/mypage','UserController@update');
+  });
+  Route::group(['middleware' => 'can:view,user'], function(){
+    Route::get('/user/{user}/mypage','UserController@showMyPage')->name('mypage');
+    Route::post('/user/{user}/mypage','UserController@update');
+  });
 });
 Auth::routes();
