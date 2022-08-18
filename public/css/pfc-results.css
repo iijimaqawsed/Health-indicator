@@ -113,6 +113,7 @@ section .example-items .example-flex{
   flex-wrap: wrap;
   display: flex;
   border: #333 solid 1px;
+  border-radius: 20px;
   background-color: #f3f3b7;
 }
 
@@ -164,7 +165,7 @@ section .example-items .example-flex{
 }
 .bread.example-item::after{
   content: "";
-  /* width: 12px; */
+  width: 12px;
 }
 .udon.example-item::after{
   content: "";

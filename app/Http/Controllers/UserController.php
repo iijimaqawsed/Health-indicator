@@ -25,6 +25,6 @@ class UserController extends Controller
         // パラメータをセットして更新
         $user->fill($params)->save();
 
-        return redirect()->route('mypage', ['user' => $user]);
+        return redirect()->route('mypage', ['user' => $user])->with('message', '変更が完了しました。');
     }
 }

@@ -13,6 +13,11 @@
                 @endforeach
               </div>
             @endif
+            @if(Session::has('message'))
+              <div class="alert alert-success">
+                <p>{{ session('message') }}</p>
+              </div>
+            @endif
             <form action="{{ route('mypage', ['user' => Auth::user()->id]) }}" method="POST">
               @csrf
               <div class="form-group">

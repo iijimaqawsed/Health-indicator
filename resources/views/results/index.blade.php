@@ -11,10 +11,10 @@
           <table class="table">
             <thead>
             <tr>
-              <th>過去の測定日</th>
-              <th>BMI数値</th>
-              <th>評価</th>
-              <th></th>
+              <th scope="col" width="65%">過去の測定日</th>
+              <th scope="col" width="15%">BMI数値</th>
+              <th scope="col" width="15%">評価</th>
+              <th scope="col" width="5%"></th>
             </tr>
             </thead>
             <tbody>
@@ -43,9 +43,9 @@
           <table class="table">
             <thead>
             <tr>
-              <th>過去の測定日</th>
-              <th>除脂肪体重</th>
-              <th></th>
+              <th scope="col" width="75%">過去の測定日</th>
+              <th scope="col" width="20%">除脂肪体重</th>
+              <th scope="col" width="5%"></th>
             </tr>
             </thead>
             <tbody>

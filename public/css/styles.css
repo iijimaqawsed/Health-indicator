@@ -208,18 +208,6 @@ opacity: 0;
 }
 
 /* ＊＊＊＊＊ 結果一覧画面 ＊＊＊＊＊ */
-.bmi .table th:first-child {
-  width: 60%;
-}
-.bmi .table th:last-child {
-  width: 5%;
-}
-.pfc .table th:first-child {
-  width: 70%;
-}
-.pfc .table th:last-child {
-  width: 10%;
-}
 
 /* --- もっと見るボタン --- */
 .b-list-item, .p-list-item {
