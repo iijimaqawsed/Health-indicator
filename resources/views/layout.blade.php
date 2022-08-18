@@ -31,6 +31,7 @@
       <nav id="g-nav">
         <div id="g-nav-list"><!--ナビの数が増えた場合縦スクロールするためのdiv※不要なら削除-->
           <ul>
+            <li><a href="/">ホーム</a></li>
             <li><a href="{{ route('mypage', ['user' => Auth::user()->id]) }}">マイページ</a></li>
             <li><a href="/bmi/measure">BMI計測開始</a></li>
             <li><a href="/pfc/measure">PFC計測開始</a></li>
