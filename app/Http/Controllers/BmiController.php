@@ -20,15 +20,12 @@ class BmiController extends Controller
         $bmi->height = $request->height;
         $bmi->weight = $request->weight;
 
-        $height = $request->height;
-        $weight = $request->weight;
-
         // 身長を加工した数値、標準体重の計算結果、標準体重との差の取得
         list($format_height, $s_weight, $difference_weight) =
-        $this->weightMeasure($height, $weight);
+        $this->weightMeasure($bmi->height, $bmi->weight);
 
         // BMIの計算
-        $bmi->result = round($weight / $format_height,2);
+        $bmi->result = round($bmi->weight / $format_height,2);
 
 
         if($bmi->result < 18.5) {
@@ -43,20 +40,22 @@ class BmiController extends Controller
 
         Auth::user()->bmis()->save($bmi);
 
-        return redirect()->route('bmi.result', [
-            'bmi' => $bmi,
-            'weight' => $s_weight,
-            'dif_weight' => $difference_weight,
-        ]);
+        return redirect()->route('bmi.result',
+            [
+                'bmi' => $bmi
+            ]
+        )->with(
+            [
+                'weight' => $s_weight,
+                'dif_weight' => $difference_weight,
+            ]);
     }
 
     public function result(BmiResult $bmi) {
-        $height = $bmi->height;
-        $weight = $bmi->weight;
 
         // 標準体重の計算結果、標準体重との差の取得
         list($format_height, $s_weight, $difference_weight) =
-        $this->weightMeasure($height, $weight);
+        $this->weightMeasure($bmi->height, $bmi->weight);
 
         return view('bmi/result',[
             'bmi' => $bmi,

@@ -96,6 +96,17 @@ transition: all 0.6s;
   transform: translate(-50%,-50%);
 }
 
+#g-nav ul:before{
+  content: "MENU";
+  font-size: 150%;
+  text-align: center;
+  display: inline-block;
+  position: absolute;
+  height: 20px;
+  top: -20%;
+  left: 0;
+  right: 0;
+}
 /*リストのレイアウト設定*/
 
 #g-nav li{
