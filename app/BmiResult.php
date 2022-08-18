@@ -30,6 +30,7 @@ class BmiResult extends Model
 もしくはただのゴリマッチョです。' ],
     ];
 
+    // ラベルの文字を取得
     public function getScoreLabelAttribute()
     {
         $score = $this->attributes['score'];
@@ -41,6 +42,7 @@ class BmiResult extends Model
         return self::SCORE[$score]['label'];
     }
 
+    // ラベルの色を適用するクラス名を取得
     public function getScoreClassAttribute()
      {
         $score = $this->attributes['score'];
@@ -52,12 +54,14 @@ class BmiResult extends Model
         return self::SCORE[$score]['class'];
     }
 
+    // 結果一覧画面の日付の形式を変更
     public function getFormattedCreatedDateAttribute()
     {
         return Carbon::createFromFormat('Y-m-d H:i:s', $this->attributes['created_at'])
             ->format('Y-m-d (D)');
     }
 
+    // BMI結果画面の評価別メッセージを取得
     public function getScoreMessageAttribute()
     {
         $score = $this->attributes['score'];
@@ -68,6 +72,7 @@ class BmiResult extends Model
         return self::SCORE[$score]['message'];
     }
 
+    // BMI結果画面の評価別メッセージの枠の色を適用させるクラス名を取得
     public function getMessageBorderAttribute()
     {
         $score = $this->attributes['score'];

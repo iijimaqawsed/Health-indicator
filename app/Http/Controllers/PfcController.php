@@ -20,11 +20,9 @@ class PfcController extends Controller
         $pfc->body_fat = $request->body_fat;
 
         // 除脂肪体重の計算
-        $weight = $request->weight;
-        $body_fat = $request->body_fat;
+        $l_b_mass = round($pfc->weight - ($pfc->weight * ($pfc->body_fat/100)),2);
 
         // 一日の摂取カロリーの計算
-        $l_b_mass = round($weight - ($weight * ($body_fat/100)),2);
         $total_kcal = floor($l_b_mass * 40) ;
 
         $pfc->l_b_mass = $l_b_mass;
@@ -35,24 +33,23 @@ class PfcController extends Controller
         $this->pfcMeasure($l_b_mass,$total_kcal);
 
         // 各参考値、計算結果の取得
-        list($p_example, $f_example, $c_example) =
-        $this->exampleMeasure($p_mass, $f_mass, $c_mass);
+        $pfc_example = $this->exampleMeasure($p_mass, $f_mass, $c_mass);
 
         return redirect()->route('pfc.result',
-        [
-            'pfc' => $pfc,
-            'l_b_mass' => $l_b_mass,
-            'total_kcal' => $total_kcal,
-            'p_mass' => $p_mass,
-            'p_kcal' => $p_kcal,
-            'f_mass' => $f_mass,
-            'f_kcal' => $f_kcal,
-            'c_mass' => $c_mass,
-            'c_kcal' => $c_kcal,
-            'p_example' => $p_example,
-            'f_example' => $f_example,
-            'c_example' => $c_example,
-        ]);
+            [
+                'pfc' => $pfc,
+            ]
+        )->with(
+            [
+                'total_kcal' => $total_kcal,
+                'p_mass' => $p_mass,
+                'p_kcal' => $p_kcal,
+                'f_mass' => $f_mass,
+                'f_kcal' => $f_kcal,
+                'c_mass' => $c_mass,
+                'c_kcal' => $c_kcal,
+                'pfc_example' => $pfc_example,
+            ]);
     }
 
     public function result(PfcResult $pfc) {
@@ -67,8 +64,7 @@ class PfcController extends Controller
         $this->pfcMeasure($l_b_mass,$total_kcal);
 
         // 各参考値、計算結果の取得
-        list($p_example, $f_example, $c_example) =
-        $this->exampleMeasure($p_mass, $f_mass, $c_mass);
+        $pfc_example = $this->exampleMeasure($p_mass, $f_mass, $c_mass);
 
         return view('pfc/result',[
             'pfc' => $pfc,
@@ -80,9 +76,7 @@ class PfcController extends Controller
             'f_kcal' => $f_kcal,
             'c_mass' => $c_mass,
             'c_kcal' => $c_kcal,
-            'p_example' => $p_example,
-            'f_example' => $f_example,
-            'c_example' => $c_example,
+            'pfc_example' => $pfc_example,
         ]);
     }
 
@@ -137,6 +131,9 @@ class PfcController extends Controller
             'honey' => round($c_mass/0.8, 0),
         ];
 
-        return array($p_example, $f_example, $c_example);
+        // 各参考値の配列を結合
+        $pfc_example = array_merge($p_example, $f_example, $c_example);
+
+        return $pfc_example;
     }
 }

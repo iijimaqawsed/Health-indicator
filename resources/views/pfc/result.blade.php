@@ -20,7 +20,7 @@
         <div class="l-b-mass">
           <h2>除脂肪体重</h2>
           <div class="output">
-            <h3>{{ $l_b_mass }}</h3>
+            <h3>{{ $pfc->l_b_mass }}</h3>
             <p class="unit">kg</p>
           </div>
         </div>
@@ -61,27 +61,27 @@
         <div class="example-items flex-items">
           <div class="example-item ro-suniku example-flex">
             <img src="/images/food_niku_buta_ro-su.png" alt="ロース肉の画像">
-            <p>豚ロース肉<span>{{ $p_example['ro-su'] }}</span>ｇ分のたんぱく質</p>
+            <p>豚ロース肉<span>{{ $pfc_example['ro-su'] }}</span>ｇ分のたんぱく質</p>
           </div>
           <div class="example-item egg example-flex">
             <img src="/images/food_oden_tamago.png" alt="卵の画像">
-            <p>たまご<span>{{ $p_example['egg'] }}</span>個分のたんぱく質</p>
+            <p>たまご<span>{{ $pfc_example['egg'] }}</span>個分のたんぱく質</p>
           </div>
           <div class="example-item natto example-flex">
             <img src="/images/food_nattou_pack.png" alt="納豆の画像">
-            <p>納豆<span>{{ $p_example['natto'] }}</span>パック分のたんぱく質</p>
+            <p>納豆<span>{{ $pfc_example['natto'] }}</span>パック分のたんぱく質</p>
           </div>
           <div class="example-item touhu example-flex">
             <img src="/images/food_tofu_kinu.png" alt="豆腐の画像">
-            <p>豆腐ミニパック<span>{{ $p_example['touhu'] }}</span>個分のたんぱく質</p>
+            <p>豆腐ミニパック<span>{{ $pfc_example['touhu'] }}</span>個分のたんぱく質</p>
           </div>
           <div class="example-item milk example-flex">
             <img src="/images/drink_milk_pack.png" alt="牛乳の画像">
-            <p>牛乳<span>{{ $p_example['milk'] }}</span>ml分のたんぱく質</p>
+            <p>牛乳<span>{{ $pfc_example['milk'] }}</span>ml分のたんぱく質</p>
           </div>
           <div class="example-item sake example-flex">
             <img src="/images/fish_sake_kirimi.png" alt="鮭の画像">
-            <p>鮭の切身<span>{{ $p_example['sake'] }}</span>切れ分のたんぱく質</p>
+            <p>鮭の切身<span>{{ $pfc_example['sake'] }}</span>切れ分のたんぱく質</p>
           </div>
 
         </div>
@@ -116,23 +116,23 @@
         <div class="example-items">
           <div class="oil example-item example-flex">
             <img src="/images/food_sald_oil.png" alt="サラダ油の画像">
-            <p>サラダ油<span>{{ $f_example['oil'] }}</span>g分の脂質</p>
+            <p>サラダ油<span>{{ $pfc_example['oil'] }}</span>g分の脂質</p>
           </div>
           <div class="butter example-item example-flex">
             <img src="/images/food_cheese_butter4.png" alt="バターの画像">
-            <p>バター<span>{{ $f_example['butter'] }}</span>g分の脂質</p>
+            <p>バター<span>{{ $pfc_example['butter'] }}</span>g分の脂質</p>
           </div>
           <div class="poteto example-item example-flex">
             <img src="/images/food_frenchfry.png" alt="ポテトの画像">
-            <p>ポテトMサイズ<span>{{ $f_example['poteto'] }}</span>個分の脂質</p>
+            <p>ポテトMサイズ<span>{{ $pfc_example['poteto'] }}</span>個分の脂質</p>
           </div>
           <div class="baraniku example-item example-flex">
             <img src="/images/niku_butabara_block.png" alt="豚バラ肉の画像">
-            <p>豚バラ肉<span>{{ $f_example['baraniku'] }}</span>g分の脂質</p>
+            <p>豚バラ肉<span>{{ $pfc_example['baraniku'] }}</span>g分の脂質</p>
           </div>
           <div class="tonkatsu example-item example-flex">
             <img src="/images/food_tonkatsu.png" alt="とんかつの画像">
-            <p>とんかつ<span>{{ $f_example['tonkatsu'] }}</span>枚分の脂質</p>
+            <p>とんかつ<span>{{ $pfc_example['tonkatsu'] }}</span>枚分の脂質</p>
           </div>
         </div>
         <!-- 解説文の配置 -->
@@ -166,27 +166,27 @@
         <div class="example-items flex-items">
           <div class="rice example-item example-flex">
             <img src="/images/amount_gohan_ochawan3.png" alt="ご飯の画像">
-            <p>ご飯<span>{{ $c_example['rice'] }}</span>杯分の炭水化物</p>
+            <p>ご飯<span>{{ $pfc_example['rice'] }}</span>杯分の炭水化物</p>
           </div>
           <div class="bread example-item example-flex">
             <img src="/images/food_bread.png" alt="パンの画像">
-            <p>食パン6枚切り<span>{{ $c_example['bread'] }}</span>枚の炭水化物</p>
+            <p>食パン6枚切り<span>{{ $pfc_example['bread'] }}</span>枚の炭水化物</p>
           </div>
           <div class="udon example-item example-flex">
             <img src="/images/bukkake_udon.png" alt="うどんの画像">
-            <p>うどん<span>{{ $c_example['udon'] }}</span>杯分の炭水化物</p>
+            <p>うどん<span>{{ $pfc_example['udon'] }}</span>杯分の炭水化物</p>
           </div>
           <div class="poteto example-item example-flex">
             <img src="/images/food_frenchfry.png" alt="ポテトの画像">
-            <p>ポテトMサイズ<span>{{ $c_example['poteto'] }}</span>個分の炭水化物</p>
+            <p>ポテトMサイズ<span>{{ $pfc_example['poteto'] }}</span>個分の炭水化物</p>
           </div>
           <div class="cola example-item example-flex">
             <img src="/images/drink_cola_petbottle.png" alt="コーラの画像">
-            <p>500mlのコーラ<span>{{ $c_example['cola'] }}</span>本分の炭水化物</p>
+            <p>500mlのコーラ<span>{{ $pfc_example['cola'] }}</span>本分の炭水化物</p>
           </div>
           <div class="honey example-item example-flex">
             <img src="/images/honey.png" alt="はちみつの画像">
-            <p>はちみつ<span>{{ $c_example['honey'] }}</span>ｇ分の炭水化物</p>
+            <p>はちみつ<span>{{ $pfc_example['honey'] }}</span>ｇ分の炭水化物</p>
           </div>
         </div>
       </section>
