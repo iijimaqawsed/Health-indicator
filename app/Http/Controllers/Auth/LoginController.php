@@ -41,8 +41,8 @@ class LoginController extends Controller
 
 
 
-    protected function loggedOut(Request $request)
-    {
-        return redirect(route('login'));
-    }
+    // protected function loggedOut(Request $request)
+    // {
+    //     return redirect(route('login'));
+    // }
 }
