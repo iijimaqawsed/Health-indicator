@@ -136,7 +136,7 @@
             </div>
             <div class="result-explanation">
               <p>この数値が<span>プラス</span>ならば、</p>
-              <p><span>体重オーバー</span>気味って言うことです。</p>
+              <p><span>体重オーバー</span>気味と言うことです。</p>
             </div>
           </div>
         </div>
