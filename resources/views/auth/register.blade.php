@@ -1,7 +1,11 @@
 @extends('layout')
 
+@section('styles')
+  <link rel="stylesheet" href="/css/form-back-img.css">
+@endsection
+
 @section('content')
-  <div class="container">
+  <div class="container register">
   <div class="row">
       <div class="col col-md-offset-3 col-md-6">
         <nav class="panel panel-default">
