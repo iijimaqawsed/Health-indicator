@@ -13,7 +13,10 @@ body {
   height: 6rem;
   justify-content: space-between;
   padding: 0 2%;
-  margin-bottom: 3rem;
+  /* margin-bottom: 3rem; */
+}
+main{
+  margin-top: 30px;
 }
 
 .logo{
@@ -208,6 +211,15 @@ opacity: 0;
 }
 
 /* ＊＊＊＊＊ 結果一覧画面 ＊＊＊＊＊ */
+/* ---ゴミ箱アイコン--- */
+.delete.gomibako{
+  height: 20px;
+  width: auto;
+  cursor: pointer;
+}
+.delete.gomibako:hover{
+  opacity: 0.5;
+}
 
 /* --- もっと見るボタン --- */
 .b-list-item, .p-list-item {

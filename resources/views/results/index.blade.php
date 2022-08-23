@@ -1,5 +1,9 @@
 @extends('layout')
 
+@section('styles')
+  <link rel="stylesheet" href="/css/index-back-img.css">
+@endsection
+
 @section('content')
   <div class="container">
     <div class="row">
@@ -25,7 +29,7 @@
                 <td>
                   <span class="label {{ $bmi->score_class }}">{{ $bmi->score_label }}</span>
                 </td>
-                <td><a class="delete" href="#">削除</a></td>
+                <td><img class="delete gomibako" src="/images/garbage can.png" alt="ゴミ箱"></td>
               </tr>
             @endforeach
             </tbody>
@@ -53,7 +57,7 @@
             <tr class="p-list-item"  data-pfc-id="{{ $pfc->id }}">
                 <td><a href="{{ route('pfc.result', ['pfc' => $pfc->id]) }}" class="pfc-result-item">{{ $pfc->formatted_created_date }}</a></td>
                 <td>{{ $pfc->l_b_mass }}kg</td>
-                <td><a class="delete" href="#">削除</a></td>
+                <td><img class="delete gomibako" src="/images/garbage can.png" alt="ゴミ箱"></td>
               </tr>
             @endforeach
             </tbody>
